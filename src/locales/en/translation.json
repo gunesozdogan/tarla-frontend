@@ -80,7 +80,10 @@
     "location": "Location",
     "size": "Size",
     "price": "Price",
-    "viewDetails": "View Details"
+    "viewDetails": "View Details",
+    "searchFields": "Search Lands",
+    "sellFields": "Sell Your Land",
+    "checkView": "Check Lands On Map"
   },
   "listingAnalytics": {
     "title": "Listing Analytics",

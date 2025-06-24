@@ -19,6 +19,28 @@ body.dark-mode .initial-page {
   background: linear-gradient(120deg, #f5faff, #eef5f9);
 }
 
+.initial-page-sections {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  padding: 2rem;
+  align-self: center;
+  height: 100%;
+}
+
+.initial-page-sections a {
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.4rem;
+  width: 30%;
+  height: 25%;
+  background-color: #397a39;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
 .listing-lower-section {
   display: flex;
 }

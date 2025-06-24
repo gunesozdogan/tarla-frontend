@@ -25,6 +25,7 @@ import PolygonTest from "./PolygonTest";
 import ProtectedRoute from "./ProtectedRoute";
 import { useTranslation } from "react-i18next";
 import "./App.css";
+import FieldsView from "./fieldsView";
 
 function App() {
   const { t } = useTranslation();
@@ -94,114 +95,124 @@ function App() {
 
   return (
     <Router>
-      <RenderNavbar />
-      <Routes>
-        {/* Open Routes (Accessible by everyone) */}
-        <Route path="/" element={<InitialPage />} />
-        <Route path="/login" element={<LoginPage setUser={setUser} />} />
-        <Route path="/signup" element={<SignupPage />} />
+      <div className="main-container">
+        <RenderNavbar />
+        <Routes>
+          {/* Open Routes (Accessible by everyone) */}
+          <Route path="/" element={<InitialPage />} />
+          <Route path="/login" element={<LoginPage setUser={setUser} />} />
+          <Route path="/signup" element={<SignupPage />} />
 
-        {/* 🔒 Protected Routes (Show Login Warning if user is not logged in) */}
-        <Route
-          path="/favorites"
-          element={
-            <ProtectedRoute user={user}>
-              <FavoritesPage />
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path="/add-listing"
-          element={
-            <ProtectedRoute user={user}>
-              <AddListing />
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path="/viewdetails/:id"
-          element={
-            <ProtectedRoute user={user}>
-              <ViewDetailsPage />
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path="/profile"
-          element={
-            <ProtectedRoute user={user}>
-              <ProfilePage />
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path="/mylistings"
-          element={
-            <ProtectedRoute user={user}>
-              <MyListings />
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path="/mylistings/:fieldId/analytics"
-          element={
-            <ProtectedRoute user={user}>
-              <ListingAnalytics />
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path="/editlisting/:listingId"
-          element={
-            <ProtectedRoute user={user}>
-              <ListingEdit />
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path="/notifications"
-          element={
-            <ProtectedRoute user={user}>
-              <NotificationPage />
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path="/search"
-          element={
-            <ProtectedRoute user={user}>
-              <ListingSearch />
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path="/polygontest"
-          element={
-            <ProtectedRoute user={user}>
-              <PolygonTest />
-            </ProtectedRoute>
-          }
-        />
+          {/* 🔒 Protected Routes (Show Login Warning if user is not logged in) */}
+          <Route
+            path="/favorites"
+            element={
+              <ProtectedRoute user={user}>
+                <FavoritesPage />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/add-listing"
+            element={
+              <ProtectedRoute user={user}>
+                <AddListing />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/viewdetails/:id"
+            element={
+              <ProtectedRoute user={user}>
+                <ViewDetailsPage />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/profile"
+            element={
+              <ProtectedRoute user={user}>
+                <ProfilePage />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/mylistings"
+            element={
+              <ProtectedRoute user={user}>
+                <MyListings />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/mylistings/:fieldId/analytics"
+            element={
+              <ProtectedRoute user={user}>
+                <ListingAnalytics />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/editlisting/:listingId"
+            element={
+              <ProtectedRoute user={user}>
+                <ListingEdit />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/notifications"
+            element={
+              <ProtectedRoute user={user}>
+                <NotificationPage />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/search"
+            element={
+              <ProtectedRoute user={user}>
+                <ListingSearch />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/fieldsView"
+            element={
+              <ProtectedRoute user={user}>
+                <FieldsView />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/polygontest"
+            element={
+              <ProtectedRoute user={user}>
+                <PolygonTest />
+              </ProtectedRoute>
+            }
+          />
 
-        {isAdmin && (
-          <>
-            <Route
-              path="/admin/dashboard"
-              element={<h1>{t("app.adminDashboard")}</h1>}
-            />
-            <Route
-              path="/admin/requests"
-              element={<h1>{t("app.adminRequests")}</h1>}
-            />
-            <Route path="/admin/fields" element={<AdminFields />} />
-          </>
-        )}
-        {/* Redirect non-admin users */}
-        <Route
-          path="/admin/*"
-          element={!isAdmin ? <Navigate to="/" /> : null}
-        />
-      </Routes>
+          {isAdmin && (
+            <>
+              <Route
+                path="/admin/dashboard"
+                element={<h1>{t("app.adminDashboard")}</h1>}
+              />
+              <Route
+                path="/admin/requests"
+                element={<h1>{t("app.adminRequests")}</h1>}
+              />
+              <Route path="/admin/fields" element={<AdminFields />} />
+            </>
+          )}
+          {/* Redirect non-admin users */}
+          <Route
+            path="/admin/*"
+            element={!isAdmin ? <Navigate to="/" /> : null}
+          />
+        </Routes>
+      </div>
     </Router>
   );
 }

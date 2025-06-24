@@ -74,13 +74,16 @@
     "noFavorites": "Henüz favori ilanınız yok."
   },
   "initialPage": {
-    "fieldsInView": "Görüntüdeki Alanlar",
+    "fieldsInView": "Haritadaki Tarlalar",
     "error": "Alanlar alınamadı.",
     "noFields": "Bu bölgede alan bulunmamaktadır.",
     "location": "Konum",
     "size": "Boyut",
     "price": "Fiyat",
-    "viewDetails": "Detayları Gör"
+    "viewDetails": "Detayları Gör",
+    "searchFields": "Satılık Tarla Bul",
+    "sellFields": "Tarlanı Sat",
+    "checkView": "Haritaya Göz At"
   },
   "listingAnalytics": {
     "title": "İlan Analitiği",
