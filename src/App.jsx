@@ -25,7 +25,8 @@ import PolygonTest from "./PolygonTest";
 import ProtectedRoute from "./ProtectedRoute";
 import { useTranslation } from "react-i18next";
 import "./App.css";
-import FieldsView from "./fieldsView";
+import FieldsView from "./FieldsView";
+import OAuthSuccess from "./0AuthSuccess";
 
 function App() {
   const { t } = useTranslation();
@@ -102,6 +103,10 @@ function App() {
           <Route path="/" element={<InitialPage />} />
           <Route path="/login" element={<LoginPage setUser={setUser} />} />
           <Route path="/signup" element={<SignupPage />} />
+          <Route
+            path="/oauth-success"
+            element={<OAuthSuccess setUser={setUser} />}
+          />
 
           {/* 🔒 Protected Routes (Show Login Warning if user is not logged in) */}
           <Route

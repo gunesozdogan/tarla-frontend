@@ -24,23 +24,16 @@ const LoginPage = ({ setUser }) => {
       });
 
       if (response.data.token) {
-        const token = response.data.user.token;
-        const user = response.data.user.user;
+        const token = response.data.token;
+        const user = response.data.user;
 
         localStorage.setItem("token", token);
         localStorage.setItem("user", JSON.stringify(user));
 
-        const token1 = localStorage.getItem("token");
-
-        console.log("User from localStorage:", token1);
-
-        console.log("User from localStorage:", user);
-
-        console.log("role from localStorage:", user.role);
+        //const token1 = localStorage.getItem("token");
+        //console.log("User from localStorage:", token1);
 
         setUser(response.data.user);
-
-        console.log("role from localStorage:", user.role);
         setError("");
         if (user.role === "admin") {
           navigate("/admin/dashboard");
@@ -88,14 +81,21 @@ const LoginPage = ({ setUser }) => {
           </form>
 
           <div className="social-login">
-            <button className="google-btn">
+            <a
+              className="google-btn"
+              href="http://localhost:4000/api/users/auth/google"
+            >
               <img src={googleLogo} alt="Google" />
               {t("loginPage.loginWithGoogle")}
-            </button>
-            <button className="facebook-btn">
+            </a>
+
+            <a
+              className="facebook-btn"
+              href="http://localhost:4000/api/users/auth/facebook"
+            >
               <img src={facebookLogo} alt="Facebook" />
               {t("loginPage.loginWithFacebook")}
-            </button>
+            </a>
           </div>
 
           <div className="signup-link">

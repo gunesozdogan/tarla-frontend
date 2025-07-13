@@ -15,7 +15,6 @@ const PolygonTest = () => {
         if (response.data) {
           const parsedPolygons = response.data.map((field) => {
             const geojson = JSON.parse(field.geojson);
-            console.log(`Parsed GeoJSON for Field ${field.id}:`, geojson);
 
             return {
               id: field.id,
@@ -27,7 +26,6 @@ const PolygonTest = () => {
             };
           });
 
-          console.log("Final Parsed Polygon Data:", parsedPolygons);
           setPolygonData(parsedPolygons);
         }
       } catch (error) {

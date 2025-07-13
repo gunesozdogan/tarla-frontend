@@ -48,7 +48,7 @@ const AddListing = () => {
     { id: 7, label: t("addListingPage.cropTypeOptions.sugarcane") },
     { id: 8, label: t("addListingPage.cropTypeOptions.potatoes") },
     { id: 9, label: t("addListingPage.cropTypeOptions.tomatoes") },
-    { id: 10, label: t("addListingPage.cropTypeOptions.grapes") }
+    { id: 10, label: t("addListingPage.cropTypeOptions.grapes") },
   ];
 
   const soilQualityOptions = [
@@ -56,7 +56,7 @@ const AddListing = () => {
     { id: 2, label: t("addListingPage.soilQualityOptions.rich") },
     { id: 3, label: t("addListingPage.soilQualityOptions.medium") },
     { id: 4, label: t("addListingPage.soilQualityOptions.poor") },
-    { id: 5, label: t("addListingPage.soilQualityOptions.veryPoor") }
+    { id: 5, label: t("addListingPage.soilQualityOptions.veryPoor") },
   ];
 
   const handleInputChange = (e) => {

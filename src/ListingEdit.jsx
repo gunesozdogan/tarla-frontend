@@ -28,7 +28,6 @@ const ListingEdit = () => {
           headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
         });
 
-        console.log("Fetched Listing Data:", response.data);
         setFormData({
           name: response.data.name,
           size: response.data.size,

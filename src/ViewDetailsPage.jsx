@@ -9,7 +9,7 @@ import { MapContainer, TileLayer, Polygon, Popup } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import L from "leaflet";
 
-const BACKEND_URL = "http://localhost:5000"; // Adjust if needed
+const BACKEND_URL = "http://localhost:4000"; // Adjust if needed
 
 const customMarker = new L.Icon({
   iconUrl: require("./assets/marker-icon.png"),
