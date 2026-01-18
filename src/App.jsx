@@ -6,27 +6,28 @@ import {
   useLocation,
   Navigate,
 } from "react-router-dom";
-import Navbar from "./Navbar";
-import LoginPage from "./LoginPage";
-import InitialPage from "./InitialPage";
-import FavoritesPage from "./FavoritesPage";
-import AddListing from "./AddListing";
-import SignupPage from "./SignupPage";
-import ViewDetailsPage from "./ViewDetailsPage";
-import ProfilePage from "./ProfilePage";
-import AdminNavbar from "./AdminNavbar";
-import AdminFields from "./AdminFields";
-import MyListings from "./MyListings";
-import ListingAnalytics from "./ListingAnalytics";
-import ListingEdit from "./ListingEdit";
-import NotificationPage from "./NotificationPage";
-import ListingSearch from "./ListingSearch";
+import Navbar from "./components/Navbar/Navbar";
+import LoginPage from "./components/LoginPage/LoginPage";
+import InitialPage from "./components/InitialPage/InitialPage";
+import FavoritesPage from "./components/FavoritesPage/FavoritesPage";
+import AddListing from "./components/AddListing/AddListing";
+import SignupPage from "./components/SignupPage/SignupPage";
+import ViewDetailsPage from "./components/ViewDetailsPage/ViewDetailsPage";
+import ProfilePage from "./components/ProfilePage/ProfilePage";
+import AdminNavbar from "./components/AdminNavbar/AdminNavbar";
+import AdminFields from "./components/AdminFields/AdminFields";
+import MyListings from "./components/MyListings/MyListings";
+import ListingAnalytics from "./components/ListingAnalytics/ListingAnalytics";
+import ListingEdit from "./components/ListingEdit/ListingEdit";
+import NotificationPage from "./components/NotificationPage/NotificationPage";
+import ListingSearch from "./components/ListingSearch/ListingSearch";
 import PolygonTest from "./PolygonTest";
 import ProtectedRoute from "./ProtectedRoute";
 import { useTranslation } from "react-i18next";
 import "./App.css";
 import FieldsView from "./FieldsView";
 import OAuthSuccess from "./0AuthSuccess";
+import { Footer } from "./components/Footer/Footer";
 
 function App() {
   const { t } = useTranslation();
@@ -50,7 +51,7 @@ function App() {
   });
 
   const [darkMode, setDarkMode] = useState(
-    () => localStorage.getItem("darkMode") === "true"
+    () => localStorage.getItem("darkMode") === "true",
   );
 
   var isAdmin = false;
@@ -217,6 +218,7 @@ function App() {
             element={!isAdmin ? <Navigate to="/" /> : null}
           />
         </Routes>
+        <Footer />
       </div>
     </Router>
   );

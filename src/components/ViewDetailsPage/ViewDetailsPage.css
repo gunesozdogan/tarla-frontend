@@ -1,0 +1,321 @@
+/* General styles for View Details Page */
+.view-details-page {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  padding: 20px;
+  height: calc(100vh - 54px);
+  box-sizing: border-box;
+  position: relative;
+}
+
+.favorite-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-left: 15px;
+  transition: transform 0.2s ease;
+}
+
+.favorite-btn img {
+  width: 30px;
+  height: 30px;
+}
+
+.favorite-btn:hover {
+  transform: scale(1.1);
+}
+
+/* Left Section: Details Content */
+.details-info-container {
+  flex: 2;
+  background-color: #f0f8f0;
+  border-radius: 12px;
+  padding: 15px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  overflow-y: auto;
+}
+
+/* Header */
+.details-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  border-bottom: 2px solid #397a39;
+  padding-bottom: 6px;
+}
+
+.details-header h1 {
+  font-size: 26px;
+  color: #2e6b2d; /* Visible in light mode */
+  font-weight: bold;
+  margin: 0;
+}
+
+.details-price {
+  font-size: 24px;
+  font-weight: bold;
+  color: #397a39;
+  margin: 0;
+}
+
+/* Info Section */
+.details-info p {
+  font-size: 14px;
+  color: #333; /* Ensures visibility in light mode */
+  margin-bottom: 4px;
+  line-height: 1.4;
+}
+
+.details-info strong {
+  color: #2e6b2d;
+}
+
+/* Photos Section */
+.details-photos-section {
+  padding-bottom: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+.details-photos-section h2 {
+  font-size: 20px;
+  color: #2e6b2d;
+}
+
+.details-photos-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 140px);
+  gap: 10px;
+  align-items: start; /* Ensures items align at the top */
+  justify-content: start; /* Aligns them properly */
+}
+
+.details-photo {
+  width: 130px;
+  height: 130px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 0; /* Ensure no extra spacing */
+  padding-bottom: 0; /* Reset padding if needed */
+}
+/* More Photos Button */
+.details-more-photos-btn {
+  width: 130px;
+  height: 130px;
+  border-radius: 8px;
+  background-size: cover;
+  background-position: center;
+  color: white;
+  font-weight: bold;
+  font-size: var(--fs-body);
+  border: none;
+  cursor: pointer;
+  text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.7);
+  transition: transform 0.2s ease;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.details-more-photos-btn:hover {
+  transform: scale(1.05);
+}
+
+/* Modal Styles */
+.photo-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 6000; /* Ensures modal is above the map */
+}
+
+.photo-modal {
+  background: #f0f8f0;
+  padding: 30px; /* More padding for a spacious feel */
+  border-radius: 12px;
+  width: 65%; /* Increased width */
+  height: 85%; /* Increased height */
+  text-align: center;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.photo-modal h2 {
+  color: #2e6b2d;
+  margin-bottom: 15px;
+}
+
+.photo-modal-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 10px;
+}
+
+.modal-photo {
+  max-height: 85%;
+  height: auto;
+  border-radius: 8px;
+}
+
+/* More Photos Button */
+.details-more-photos-btn {
+  width: 130px;
+  height: 130px;
+  border-radius: 8px;
+  background-size: cover;
+  background-position: center;
+  color: white;
+  font-weight: bold;
+  font-size: var(--fs-body);
+  border: none;
+  cursor: pointer;
+  text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.7);
+  transition: transform 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Blurred Overlay Effect */
+.details-more-photos-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+  backdrop-filter: blur(5px);
+  border-radius: 8px;
+}
+
+/* + More Text */
+.details-more-photos-btn span {
+  position: relative;
+  z-index: 2;
+  font-size: 18px;
+}
+
+/* Photo Counter */
+.photo-count {
+  font-size: 20px;
+  font-weight: bold;
+  color: #2e6b2d;
+  margin-top: 20px; /* Adjusted spacing */
+  display: flex;
+  align-items: center;
+  gap: 15px; /* Space between prev/next buttons and counter */
+}
+
+/* Adjust navigation buttons to be near the photo counter */
+.photo-modal-prev,
+.photo-modal-next {
+  font-size: 24px;
+  border: none;
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  cursor: pointer;
+  padding: 10px 15px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+}
+
+/* Align buttons near the photo count */
+.photo-modal-prev {
+  order: -1; /* Move it before the count */
+}
+
+.photo-modal-next {
+  order: 1; /* Move it after the count */
+}
+
+.photo-modal-close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 24px;
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+/* Right Section: Map */
+.details-map-container {
+  flex: 1.5;
+  background-color: #f0f8f0;
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+  height: 80vh; /* Ensuring the map fits the screen without scrollbar */
+}
+
+.details-map {
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+}
+
+/* Dark Mode */
+body.dark-mode .view-details-page {
+  background-color: #1e1e1e;
+  color: #f5f5f5;
+}
+
+/* Error Messages */
+.details-error-message {
+  color: red;
+  text-align: center;
+  font-size: var(--fs-body);
+  font-weight: bold;
+}
+
+.details-loading-message {
+  color: #397a39;
+  text-align: center;
+  font-size: var(--fs-body);
+}
+
+/* Dark Mode */
+body.dark-mode .view-details-page {
+  background-color: #1e1e1e;
+  color: #f5f5f5;
+}
+
+body.dark-mode .details-info-container {
+  background-color: #2c2c2c;
+  color: #f5f5f5;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.5);
+}
+
+body.dark-mode .details-map-container {
+  background-color: #383838;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.5);
+}
+
+body.dark-mode .details-info p,
+body.dark-mode .details-price,
+body.dark-mode .details-header h1 {
+  color: #f5f5f5; /* Visible in dark mode */
+}

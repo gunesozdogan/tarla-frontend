@@ -3,23 +3,26 @@
     "title": "Add New Listing",
     "error": "Failed to create listing. Please try again.",
     "success": "Listing created successfully!",
-    "name": "Name",
-    "province": "Province",
-    "district": "District",
-    "neighborhood": "Neighborhood",
-    "ada": "Ada",
-    "parsel": "Parsel",
-    "price": "Price",
-    "annualRainfall": "Annual Rainfall (mm)",
-    "soilQuality": "Soil Quality",
+    "name": "Name *",
+    "province": "Province *",
+    "selectProvince": " Select province",
+    "district": "District *",
+    "selectDistrict": "Select district",
+    "neighborhood": "Neighborhood *",
+    "selectNeighborhood": "Select neighborhood",
+    "ada": "Ada *",
+    "parsel": "Parsel *",
+    "price": "Price *",
+    "annualRainfall": "Annual Rainfall (mm) *",
+    "soilQuality": "Soil Quality *",
     "selectSoilQuality": "Select Soil Quality",
-    "description": "Description",
-    "historicalData": "Historical Data",
-    "cropTypes": "Crop Types",
+    "description": "Description *",
+    "placeholderDescription": "Easily accessible farmland with road frontage and water connection nearby.",
+    "historicalData": "Historical Data *",
+    "placeholderHistoricalData": "Previously used for organic farming, owned by one family for 20 years.",
+    "cropTypes": "Crop Types *",
     "uploadPhotos": "Upload Photos",
     "submit": "Add Listing",
-    "placeholderDescription": "Provide a description...",
-    "placeholderHistoricalData": "Enter historical data...",
     "cropTypeOptions": {
       "wheat": "Wheat",
       "corn": "Corn",
@@ -30,8 +33,12 @@
       "sugarcane": "Sugarcane",
       "potatoes": "Potatoes",
       "tomatoes": "Tomatoes",
-      "grapes": "Grapes"
+      "grapes": "Grapes",
+      "other": "Other",
+      "otherCropTypes": "Type1, Type2...",
+      "errorEnterOtherCrop": "Please enter other crop type"
     },
+    "croptypeMissing": "Please enter at least 1 crop type",
     "soilQualityOptions": {
       "veryRich": "Very Rich",
       "rich": "Rich",
@@ -73,6 +80,10 @@
     "viewDetails": "View Details",
     "noFavorites": "You have no favorite listings yet."
   },
+  "hero": {
+    "mainHeading": "Buy, Sell & Verify \n            Agricultural Lands Easily",
+    "secondaryHeading": "A trusted platform connecting land owners and buyers across Türkiye."
+  },
   "initialPage": {
     "fieldsInView": "Fields in View",
     "error": "Failed to fetch fields.",
@@ -81,9 +92,23 @@
     "size": "Size",
     "price": "Price",
     "viewDetails": "View Details",
-    "searchFields": "Search Lands",
-    "sellFields": "Sell Your Land",
-    "checkView": "Check Lands On Map"
+    "searchLands": "Search Lands",
+    "sellLands": "Sell Your Land",
+    "checkLands": "Check Lands",
+    "about": "About",
+    "searchLandsDescription": "Find the best agricultural lands for sale in your area.",
+    "sellLandsDescription": "List your land and reach verified buyers easily.",
+    "checkLandsDescription": "Verify detailed information about any listed lands on map.",
+    "startSearch": "Start Searching",
+    "getStarted": "Get Started",
+    "checkNow": "Check Now",
+    "searchLand": "Search Land",
+    "checkDetails": "Check Details",
+    "contactOwner": "Contact Owner",
+    "searchLandDescription": "Find agricultural lands that match your needs.",
+    "checkDetailsDescription": "Verify the details and history of the land.",
+    "contactOwnerDescription": "Reach out the dealer to negotiate the deal.",
+    "howItWorks": "How It Works"
   },
   "listingAnalytics": {
     "title": "Listing Analytics",
@@ -216,7 +241,9 @@
     "backToLoginButton": "Back to Login",
     "errorPasswordMismatch": "Passwords do not match.",
     "errorSignupFailed": "Failed to create account. Please try again.",
-    "successSignup": "Account created successfully! Redirecting to login..."
+    "successSignup": "Account created successfully! Redirecting to login...",
+    "errorUsernameExists": "Username already exists",
+    "errorEmailExists": "Email already exists"
   },
   "viewDetailsPage": {
     "fieldDetailsError": "Failed to load field details.",
@@ -234,5 +261,8 @@
     "fieldSoilQuality": "🌱 Soil Quality:",
     "fieldCropTypes": "🌾 Crop Types:",
     "fieldDescription": "📝 Description:"
+  },
+  "footerPage": {
+    "rightsReserved": "© 2025 Tarla - All Rights Reserved"
   }
 }

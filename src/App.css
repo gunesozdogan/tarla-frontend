@@ -1,10 +1,69 @@
 /* General App styles */
 :root {
+  /* Font size */
+  --fs-h1: 4.8rem;
+  --fs-h2: 4rem;
+  --fs-h3: 3.2rem;
+  --fs-h4: 2.8rem;
+  --fs-h5: 2.4rem;
+  --fs-h6: 2rem;
+
+  --fs-body-lg: 1.8rem;
+  --fs-body: 1.6rem;
+  --fs-body-sm: 1.4rem;
+  --fs-body-xs: 1.2rem;
+
+  --fs-button: 1.4rem;
+  --fs-label: 1.2rem;
+
+  /* Line height */
+  --lh-h1: 1.15;
+  --lh-h2: 1.2;
+  --lh-h3: 1.25;
+  --lh-h4: 1.3;
+  --lh-h5: 1.35;
+  --lh-h6: 1.4;
+
+  --lh-body-lg: 1.6;
+  --lh-body: 1.6;
+  --lh-body-sm: 1.5;
+  --lh-body-xs: 1.4;
+
+  --lh-button: 1.2;
+  --lh-label: 1.3;
+
+  /* COLORS */
+  /* Backgrounds */
+  --color-bg-main: #fff;
+  --color-bg-main-dark: #f7f9f7;
+  --color-bg-secondary: #397a39;
+  --color-bg-secondary-dark: #2e6b2d;
+
+  /* Headings */
+  --color-heading-primary: #2e3a34;
+  --color-heading-secondary: #5f6d64;
+
+  /* Text */
+  --color-text-primary: #6b7280;
+  --color-text-secondary: #8a948e;
+
+  /* Icons */
+  --color-icon-primary: #3f6f3a;
+  --color-icon-primary-dark: #365f32;
+  --color-icon-soft: #e6f1e6;
+
+  /* Borders */
+  --color-border: #e3e8e3;
+  --color-link: #2f6b3a;
+}
+
+:root {
   --background-light: #eef6ee;
   --text-light: #333;
   --background-dark: #333;
   --text-dark: #eef6ee;
   height: 100%;
+  font-size: 62.5%;
 }
 
 /* General App styles */
@@ -15,10 +74,13 @@ html {
   font-family: "Inter", sans-serif;
   background-color: var(--background-light);
   color: var(--text-light);
-  transition: background-color 0.3s, color 0.3s;
+  transition:
+    background-color 0.3s,
+    color 0.3s;
   min-height: 100vh;
   height: 100%; /* Ensure body and html can stretch to viewport height */
   overflow-y: auto; /* Allow scrolling for overflowing content */
+  box-sizing: border-box;
 }
 
 body.dark-mode {
@@ -110,7 +172,9 @@ body.dark-mode {
 .page-enter-active {
   opacity: 1;
   transform: translateY(0);
-  transition: opacity 0.3s, transform 0.3s;
+  transition:
+    opacity 0.3s,
+    transform 0.3s;
 }
 
 /* Dark mode toggle styles */

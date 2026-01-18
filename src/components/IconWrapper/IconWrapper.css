@@ -1,0 +1,9 @@
+.icon-wrapper {
+  width: 40px;
+  height: 40px;
+  background: rgba(46, 125, 50, 0.1);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

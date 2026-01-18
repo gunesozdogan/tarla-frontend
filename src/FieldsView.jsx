@@ -15,7 +15,7 @@ import "leaflet.markercluster/dist/MarkerCluster.css";
 import "leaflet.markercluster/dist/MarkerCluster.Default.css";
 import L from "leaflet";
 import MarkerClusterGroup from "@changey/react-leaflet-markercluster";
-import "./InitialPage.css";
+import "../src/components/InitialPage/InitialPage.css";
 
 // Custom marker icon
 const customMarker = L.icon({
@@ -50,7 +50,7 @@ const MapStyleToggle = ({ setTileLayer }) => {
         setTileLayer((prev) =>
           prev === "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
             ? "https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png"
-            : "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+            : "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
         )
       }
     >
@@ -104,7 +104,7 @@ const FieldsView = () => {
   const [fields, setFields] = useState([]);
   const [error, setError] = useState("");
   const [tileLayer, setTileLayer] = useState(
-    "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+    "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
   );
 
   // Fetch initial fields when the page loads (default Turkey bounds)
@@ -123,7 +123,7 @@ const FieldsView = () => {
             headers: {
               Authorization: `Bearer ${localStorage.getItem("token")}`,
             },
-          }
+          },
         );
 
         if (!response.ok) {

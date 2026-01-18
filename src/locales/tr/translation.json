@@ -3,23 +3,26 @@
     "title": "Yeni İlan Ekle",
     "error": "İlan oluşturulamadı. Lütfen tekrar deneyin.",
     "success": "İlan başarıyla oluşturuldu!",
-    "name": "İsim",
-    "province": "İl",
-    "district": "İlçe",
-    "neighborhood": "Mahalle",
-    "ada": "Ada",
-    "parsel": "Parsel",
-    "price": "Fiyat",
-    "annualRainfall": "Yıllık Yağış (mm)",
-    "soilQuality": "Toprak Kalitesi",
+    "name": "İsim *",
+    "province": "İl *",
+    "selectProvince": " İl seçiniz",
+    "district": "İlçe *",
+    "selectDistrict": "İlçe seçiniz",
+    "neighborhood": "Mahalle *",
+    "selectNeighborhood": "Mahalle seçiniz",
+    "ada": "Ada *",
+    "parsel": "Parsel *",
+    "price": "Fiyat *",
+    "annualRainfall": "Yıllık Yağış (mm) *",
+    "soilQuality": "Toprak Kalitesi *",
     "selectSoilQuality": "Toprak Kalitesi Seç",
-    "description": "Açıklama",
-    "historicalData": "Geçmiş Veriler",
-    "cropTypes": "Ürün Türleri",
+    "description": "Açıklama *",
+    "placeholderDescription": "Yola cepheli, su bağlantısı olan verimli tarla.",
+    "historicalData": "Geçmiş Veriler *",
+    "placeholderHistoricalData": "Önceden bağ olarak kullanılmış, tapusu temiz.",
+    "cropTypes": "Ürün Türleri *",
     "uploadPhotos": "Fotoğraf Yükle",
     "submit": "İlanı Ekle",
-    "placeholderDescription": "Bir açıklama girin...",
-    "placeholderHistoricalData": "Geçmiş verileri girin...",
     "cropTypeOptions": {
       "wheat": "Buğday",
       "corn": "Mısır",
@@ -30,8 +33,12 @@
       "sugarcane": "Şeker Kamışı",
       "potatoes": "Patates",
       "tomatoes": "Domates",
-      "grapes": "Üzüm"
+      "grapes": "Üzüm",
+      "other": "Diğer",
+      "otherCropTypes": "Tür1, Tür2...",
+      "errorEnterOtherCrop": "Lütfen diğer ürün türünü giriniz"
     },
+    "croptypeMissing": "Lütfen en az 1 ürün türü seçiniz",
     "soilQualityOptions": {
       "veryRich": "Çok Zengin",
       "rich": "Zengin",
@@ -73,17 +80,35 @@
     "viewDetails": "Detayları Gör",
     "noFavorites": "Henüz favori ilanınız yok."
   },
+  "hero": {
+    "mainHeading": "Tarım Arazilerini \nKolayca Alın, Satın veya Doğrulayın",
+    "secondaryHeading": "Türkiye genelinde arazi sahipleri ile alıcıları buluşturan güvenilir bir platform."
+  },
   "initialPage": {
-    "fieldsInView": "Haritadaki Tarlalar",
-    "error": "Alanlar alınamadı.",
-    "noFields": "Bu bölgede alan bulunmamaktadır.",
+    "fieldsInView": "Yakınınızdaki Araziler",
+    "error": "Araziler yüklenirken bir hata oluştu.",
+    "noFields": "Bu bölgede şu anda listelenmiş arazi bulunmuyor.",
     "location": "Konum",
-    "size": "Boyut",
+    "size": "Arazi Büyüklüğü",
     "price": "Fiyat",
-    "viewDetails": "Detayları Gör",
-    "searchFields": "Satılık Tarla Bul",
-    "sellFields": "Tarlanı Sat",
-    "checkView": "Haritaya Göz At"
+    "viewDetails": "Detayları İncele",
+    "searchLands": "Arazi Keşfet",
+    "sellLands": "Arazini Sat",
+    "checkLands": "Araziyi Doğrula",
+    "about": "Hakkımızda",
+    "searchLandsDescription": "Size en uygun satılık tarım arazilerini hemen keşfedin.",
+    "sellLandsDescription": "Arazinizi güvenle listeleyin, doğru alıcılarla hızlıca buluşun.",
+    "checkLandsDescription": "Harita üzerinden arazilerin tüm detaylarını güvenle inceleyin.",
+    "startSearch": "Keşfetmeye Başla",
+    "getStarted": "Hemen Başla",
+    "checkNow": "Şimdi Doğrula",
+    "searchLand": "Arazi Ara",
+    "checkDetails": "Detayları İncele",
+    "contactOwner": "Satıcıyla İletişime Geç",
+    "searchLandDescription": "Yatırımınıza değer katacak tarım arazilerini bulun.",
+    "checkDetailsDescription": "Arazinin geçmişini, durumunu ve tüm detaylarını kontrol edin.",
+    "contactOwnerDescription": "Satıcıyla doğrudan iletişime geçerek fırsatı kaçırmayın.",
+    "howItWorks": "Nasıl Çalışır?"
   },
   "listingAnalytics": {
     "title": "İlan Analitiği",
@@ -216,7 +241,9 @@
     "backToLoginButton": "Giriş Yapmaya Geri Dön",
     "errorPasswordMismatch": "Şifreler uyuşmuyor.",
     "errorSignupFailed": "Hesap oluşturulamadı. Lütfen tekrar deneyin.",
-    "successSignup": "Hesap başarıyla oluşturuldu! Giriş sayfasına yönlendiriliyorsunuz..."
+    "successSignup": "Hesap başarıyla oluşturuldu! Giriş sayfasına yönlendiriliyorsunuz...",
+    "errorUsernameExists": "Bu kullanıcı adı zaten kullanılıyor",
+    "errorEmailExists": "Bu email adresi zaten kullanılıyor"
   },
   "viewDetailsPage": {
     "fieldDetailsError": "Alan detayları yüklenemedi.",
@@ -234,5 +261,8 @@
     "fieldSoilQuality": "🌱 Toprak Kalitesi:",
     "fieldCropTypes": "🌾 Ekin Türleri:",
     "fieldDescription": "📝 Açıklama:"
+  },
+  "footerPage": {
+    "rightsReserved": "© 2025 Tarla - Her Hakkı Saklıdır"
   }
 }
