@@ -28,6 +28,7 @@ import "./App.css";
 import FieldsView from "./FieldsView";
 import OAuthSuccess from "./0AuthSuccess";
 import { Footer } from "./components/Footer/Footer";
+import { HowItWorks } from "./components/HowItWorks/HowItWorks";
 
 function App() {
   const { t } = useTranslation();
@@ -104,6 +105,7 @@ function App() {
           <Route path="/" element={<InitialPage />} />
           <Route path="/login" element={<LoginPage setUser={setUser} />} />
           <Route path="/signup" element={<SignupPage />} />
+          <Route path="/how-it-works" element={<HowItWorks />} />
           <Route
             path="/oauth-success"
             element={<OAuthSuccess setUser={setUser} />}

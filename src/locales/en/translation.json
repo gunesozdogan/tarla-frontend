@@ -92,7 +92,7 @@
     "size": "Size",
     "price": "Price",
     "viewDetails": "View Details",
-    "searchLands": "Search Lands",
+    "buyLands": "Buy Lands",
     "sellLands": "Sell Your Land",
     "checkLands": "Check Lands",
     "about": "About",
@@ -108,7 +108,9 @@
     "searchLandDescription": "Find agricultural lands that match your needs.",
     "checkDetailsDescription": "Verify the details and history of the land.",
     "contactOwnerDescription": "Reach out the dealer to negotiate the deal.",
-    "howItWorks": "How It Works"
+    "howItWorks": "How It Works",
+    "howItWorksDescription": "Learn how our platform works step by step.",
+    "learnMore": "Learn More"
   },
   "listingAnalytics": {
     "title": "Listing Analytics",
@@ -193,7 +195,7 @@
     "home": "Home",
     "favorites": "Favorites",
     "search": "Search",
-    "myListings": "My Listings",
+    "myListings": "My Lands",
     "addListing": "Add Listing",
     "notifications": "Notifications",
     "viewProfile": "View Profile",

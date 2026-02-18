@@ -93,7 +93,8 @@ body.dark-mode {
   flex-direction: column;
   min-width: 100vh;
   height: 100%;
-  justify-content: center;
+  min-height: 100vh;
+  justify-content: space-between;
 }
 
 .App {
@@ -181,7 +182,6 @@ body.dark-mode {
 .dark-mode-toggle {
   display: flex;
   align-items: center;
-  margin-left: 20px;
 }
 
 .toggle-label {

@@ -14,7 +14,7 @@ export const Footer = () => {
         </div>
         <div className="link-container">
           <Link to="/add-listing">{t("initialPage.sellLands")}</Link>
-          <Link to="/search">{t("initialPage.searchLands")}</Link>
+          <Link to="/search">{t("initialPage.buyLands")}</Link>
           <Link to="/fieldsView">{t("initialPage.checkLands")}</Link>
           <Link to="/about">{t("initialPage.about")}</Link>
         </div>

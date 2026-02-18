@@ -9,7 +9,7 @@ import {
 
 export const FIRST_CARDS_CONFIG = [
   {
-    titleKey: "initialPage.searchLands",
+    titleKey: "initialPage.buyLands",
     descKey: "initialPage.searchLandsDescription",
     Icon: MapPin,
     to: "/search",
@@ -29,12 +29,12 @@ export const FIRST_CARDS_CONFIG = [
     background: null,
   },
   {
-    titleKey: "initialPage.checkLands",
-    descKey: "initialPage.checkLandsDescription",
+    titleKey: "initialPage.howItWorks",
+    descKey: "initialPage.howItWorksDescription",
     Icon: FileCheck,
-    to: "/fieldsView",
+    to: "/how-it-works",
     ButtonIcon: null,
-    buttonTextKey: "initialPage.checkNow",
+    buttonTextKey: "initialPage.learnMore",
     primary: false,
     background: null,
   },
