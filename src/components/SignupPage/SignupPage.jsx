@@ -67,60 +67,84 @@ const SignupPage = () => {
   return (
     <div className="signup-page">
       <div className="signup-container">
-        <h1>{t("signupPage.title")}</h1>
-        {error && <p className="error-message">{error}</p>}
-        {success && <p className="success-message">{success}</p>}
-        <form className="signup-form" onSubmit={handleSubmit}>
-          <label>
-            {t("signupPage.username")}:
-            <input
-              type="text"
-              name="username"
-              value={formData.username}
-              onChange={handleInputChange}
-              required
-            />
-          </label>
-          <label>
-            {t("signupPage.email")}:
-            <input
-              type="email"
-              name="email"
-              value={formData.email}
-              onChange={handleInputChange}
-              required
-            />
-          </label>
-          <label>
-            {t("signupPage.password")}:
-            <input
-              type="password"
-              name="password"
-              value={formData.password}
-              onChange={handleInputChange}
-              required
-            />
-          </label>
-          <label>
-            {t("signupPage.confirmPassword")}:
-            <input
-              type="password"
-              name="confirmPassword"
-              value={formData.confirmPassword}
-              onChange={handleInputChange}
-              required
-            />
-          </label>
-          <button type="submit" className="signup-btn">
-            {t("signupPage.submitButton")}
-          </button>
-        </form>
-        <button
-          className="back-to-login-btn"
-          onClick={() => navigate("/login")}
-        >
-          {t("signupPage.backToLoginButton")}
-        </button>
+        <div className="signup-card">
+          <h1>{t("signupPage.title")}</h1>
+          <p>{t("signupPage.createNewAccount")}</p>
+
+          {error && <p className="error-message">{error}</p>}
+          {success && <p className="success-message">{success}</p>}
+
+          <form className="signup-form" onSubmit={handleSubmit}>
+            <div className="form-group">
+              <label>{t("signupPage.username")}</label>
+              <input
+                type="text"
+                name="username"
+                placeholder={t("signupPage.enterUsername")}
+                value={formData.username}
+                onChange={handleInputChange}
+                className="signup-input"
+                required
+              />
+            </div>
+
+            <div className="form-group">
+              <label>{t("signupPage.email")}</label>
+              <input
+                type="email"
+                name="email"
+                placeholder={t("signupPage.enterEmail")}
+                value={formData.email}
+                onChange={handleInputChange}
+                className="signup-input"
+                required
+              />
+            </div>
+
+            <div className="form-group">
+              <label>{t("signupPage.password")}</label>
+              <input
+                type="password"
+                name="password"
+                placeholder={t("signupPage.enterPassword")}
+                value={formData.password}
+                onChange={handleInputChange}
+                className="signup-input"
+                required
+              />
+            </div>
+
+            <div className="form-group">
+              <label>{t("signupPage.confirmPassword")}</label>
+              <input
+                type="password"
+                name="confirmPassword"
+                placeholder={t("signupPage.confirmPasswordPlaceholder")}
+                value={formData.confirmPassword}
+                onChange={handleInputChange}
+                className="signup-input"
+                required
+              />
+            </div>
+
+            <button type="submit" className="signup-btn">
+              {t("signupPage.submitButton")}
+            </button>
+          </form>
+
+          <div className="signup-link">
+            <p>
+              {t("signupPage.alreadyHaveAccount")}{" "}
+              <button
+                type="button"
+                className="back-to-login-btn"
+                onClick={() => navigate("/login")}
+              >
+                {t("signupPage.backToLoginButton")}
+              </button>
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   );

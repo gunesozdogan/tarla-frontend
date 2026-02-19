@@ -2,6 +2,11 @@ import "./Footer.css";
 import logo from "../../assets/logo.png";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
+
+const SocialIcon = ({ children }) => (
+  <span style={{ fontSize: "1.2rem" }}>{children}</span>
+);
+
 export const Footer = () => {
   const { t } = useTranslation();
 
@@ -19,11 +24,28 @@ export const Footer = () => {
           <Link to="/about">{t("initialPage.about")}</Link>
         </div>
       </div>
-      <div className="lower-container">
-        <p>
-          <span>{t("footerPage.rightsReserved")}</span>|
-          <Link>Terms of Service</Link>|<Link>Privacy</Link>
-        </p>
+      <div className="divider" />
+      <div className="footer-bottom">
+        <div className="lower-container">
+          <p>
+            <span>{t("footerPage.rightsReserved")}</span>
+            <span style={{ color: "rgba(255,255,255,0.3)" }}>|</span>
+            <Link>Terms of Service</Link>
+            <span style={{ color: "rgba(255,255,255,0.3)" }}>|</span>
+            <Link>Privacy</Link>
+          </p>
+        </div>
+        <div className="social-links">
+          <a href="#" aria-label="Instagram">
+            <SocialIcon>📷</SocialIcon>
+          </a>
+          <a href="#" aria-label="Twitter">
+            <SocialIcon>🐦</SocialIcon>
+          </a>
+          <a href="#" aria-label="LinkedIn">
+            <SocialIcon>💼</SocialIcon>
+          </a>
+        </div>
       </div>
     </div>
   );

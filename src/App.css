@@ -55,6 +55,98 @@
   /* Borders */
   --color-border: #e3e8e3;
   --color-link: #2f6b3a;
+
+  /* Theme Colors - Green */
+  --color-primary: #5ba877;
+  --color-primary-dark: #4a9963;
+  --color-primary-light: #8fd4a6;
+  --color-primary-bg: rgba(91, 168, 119, 0.2);
+  --color-primary-glow: rgba(91, 168, 119, 0.3);
+
+  /* Gradient backgrounds */
+  --gradient-primary: linear-gradient(135deg, #5ba877 0%, #4a9963 100%);
+  --gradient-dark: linear-gradient(135deg, #2e6b2d 0%, #1f4a1e 100%);
+  --gradient-darker: linear-gradient(135deg, #0a3d0a 0%, #051d05 100%);
+  --gradient-text: linear-gradient(135deg, #5ba877 0%, #8fd4a6 100%);
+
+  /* Shadows */
+  --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.15);
+  --shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.2);
+  --shadow-primary: 0 8px 24px rgba(91, 168, 119, 0.25);
+  --shadow-primary-lg: 0 15px 40px rgba(91, 168, 119, 0.3);
+
+  /* Primary variants with opacity */
+  --color-primary-05: rgba(91, 168, 119, 0.05);
+  --color-primary-08: rgba(91, 168, 119, 0.08);
+  --color-primary-10: rgba(91, 168, 119, 0.1);
+  --color-primary-15: rgba(91, 168, 119, 0.15);
+  --color-primary-20: rgba(91, 168, 119, 0.2);
+  --color-primary-25: rgba(91, 168, 119, 0.25);
+  --color-primary-30: rgba(91, 168, 119, 0.3);
+  --color-primary-35: rgba(91, 168, 119, 0.35);
+
+  /* Secondary colors */
+  --color-green-secondary: #397a39;
+  --color-green-dark: #2e6b2d;
+  --color-green-darker: #244c22;
+
+  /* Neutral colors */
+  --color-gray-100: #f5f5f5;
+  --color-gray-200: #eee;
+  --color-gray-300: #ddd;
+  --color-gray-400: #ccc;
+  --color-gray-500: #555;
+  --color-gray-600: #6b7280;
+  --color-white: #ffffff;
+
+  /* Dark mode */
+  --color-dark-bg: #1e1e1e;
+  --color-dark-card: #2c2c2c;
+  --color-dark-card-hover: #383838;
+  --color-dark-text: #eef6ee;
+  --color-dark-text-secondary: #b0b0b0;
+  --color-dark-border: #444;
+}
+
+/* Dark Mode Theme */
+body.dark-mode {
+  --color-bg-main: #1a1a1a;
+  --color-bg-main-dark: #252525;
+  --color-heading-primary: #e8ebe9;
+  --color-heading-secondary: #b0b5b1;
+  --color-text-primary: #b0b5b1;
+  --color-text-secondary: #8a948e;
+  --color-border: #3a3a3a;
+  --color-link: #5ba877;
+
+  --gradient-primary: linear-gradient(135deg, #5ba877 0%, #3d8b5a 100%);
+  --gradient-dark: linear-gradient(135deg, #1a3d1a 0%, #0d1f0d 100%);
+  --gradient-darker: linear-gradient(135deg, #0a1f0a 0%, #050f05 100%);
+  --gradient-text: linear-gradient(135deg, #8fd4a6 0%, #5ba877 100%);
+
+  --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.5);
+  --shadow-primary: 0 8px 24px rgba(91, 168, 119, 0.3);
+  --shadow-primary-lg: 0 15px 40px rgba(91, 168, 119, 0.4);
+
+  --color-primary-05: rgba(91, 168, 119, 0.08);
+  --color-primary-08: rgba(91, 168, 119, 0.12);
+  --color-primary-10: rgba(91, 168, 119, 0.15);
+  --color-primary-15: rgba(91, 168, 119, 0.2);
+  --color-primary-20: rgba(91, 168, 119, 0.25);
+  --color-primary-25: rgba(91, 168, 119, 0.3);
+  --color-primary-30: rgba(91, 168, 119, 0.35);
+  --color-primary-35: rgba(91, 168, 119, 0.4);
+
+  --color-gray-100: #2c2c2c;
+  --color-gray-200: #383838;
+  --color-gray-300: #444;
+  --color-gray-400: #555;
+  --color-gray-500: #888;
+  --color-gray-600: #b0b5b1;
+  --color-white: #ffffff;
 }
 
 :root {
@@ -91,7 +183,6 @@ body.dark-mode {
 .main-container {
   display: flex;
   flex-direction: column;
-  min-width: 100vh;
   height: 100%;
   min-height: 100vh;
   justify-content: space-between;

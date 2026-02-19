@@ -9,6 +9,8 @@ import {
   FaBell,
   FaUser,
   FaGlobe,
+  FaBars,
+  FaTimes,
 } from "react-icons/fa";
 import { useTranslation } from "react-i18next";
 import "./Navbar.css";
@@ -19,6 +21,7 @@ const Navbar = ({ user, setUser, darkMode, setDarkMode }) => {
   const navigate = useNavigate();
   const location = useLocation();
   const [langOpen, setLangOpen] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [language, setLanguage] = useState(i18n.language || "en");
 
   const handleLogout = () => {
@@ -40,28 +43,29 @@ const Navbar = ({ user, setUser, darkMode, setDarkMode }) => {
         <h1>Tarla</h1>
       </div>
 
+      {/* Desktop Navigation */}
       <div className="nav-links">
         <div className="nav-links-inner">
           <Link to="/" className={location.pathname === "/" ? "active" : ""}>
-            <FaHome /> {t("navbar.home")}
+            <FaHome /> <span>{t("navbar.home")}</span>
           </Link>
           <Link
             to="/search"
             className={location.pathname === "/search" ? "active" : ""}
           >
-            <FaSearch /> {t("initialPage.buyLands")}
+            <FaSearch /> <span>{t("initialPage.buyLands")}</span>
           </Link>
           <Link
             to="/add-listing"
             className={location.pathname === "/add-listing" ? "active" : ""}
           >
-            <FaPlusCircle /> {t("initialPage.sellLands")}
+            <FaPlusCircle /> <span>{t("initialPage.sellLands")}</span>
           </Link>
           <Link
             to="/mylistings"
             className={location.pathname === "/mylistings" ? "active" : ""}
           >
-            <FaThLarge /> {t("navbar.myListings")}
+            <FaThLarge /> <span>{t("navbar.myListings")}</span>
           </Link>
         </div>
 
@@ -69,12 +73,14 @@ const Navbar = ({ user, setUser, darkMode, setDarkMode }) => {
           <Link
             to="/favorites"
             className={location.pathname === "/favorites" ? "active" : ""}
+            title={t("navbar.favorites")}
           >
             <FaStar />
           </Link>
           <Link
             to="/notifications"
             className={location.pathname === "/notifications" ? "active" : ""}
+            title={t("navbar.notifications")}
           >
             <FaBell />
           </Link>
@@ -110,6 +116,7 @@ const Navbar = ({ user, setUser, darkMode, setDarkMode }) => {
             <button
               className="lang-button"
               onClick={() => setLangOpen(!langOpen)}
+              title={t("navbar.language")}
             >
               <FaGlobe />
             </button>
@@ -127,6 +134,105 @@ const Navbar = ({ user, setUser, darkMode, setDarkMode }) => {
           </div>
         </div>
       </div>
+
+      {/* Mobile Hamburger Menu */}
+      <button
+        className="hamburger-menu"
+        onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+        aria-label="Toggle menu"
+      >
+        {mobileMenuOpen ? <FaTimes /> : <FaBars />}
+      </button>
+
+      {/* Mobile Navigation Menu */}
+      {mobileMenuOpen && (
+        <div className="mobile-menu">
+          <Link
+            to="/"
+            className={location.pathname === "/" ? "active" : ""}
+            onClick={() => setMobileMenuOpen(false)}
+          >
+            <FaHome /> {t("navbar.home")}
+          </Link>
+          <Link
+            to="/search"
+            className={location.pathname === "/search" ? "active" : ""}
+            onClick={() => setMobileMenuOpen(false)}
+          >
+            <FaSearch /> {t("initialPage.buyLands")}
+          </Link>
+          <Link
+            to="/add-listing"
+            className={location.pathname === "/add-listing" ? "active" : ""}
+            onClick={() => setMobileMenuOpen(false)}
+          >
+            <FaPlusCircle /> {t("initialPage.sellLands")}
+          </Link>
+          <Link
+            to="/mylistings"
+            className={location.pathname === "/mylistings" ? "active" : ""}
+            onClick={() => setMobileMenuOpen(false)}
+          >
+            <FaThLarge /> {t("navbar.myListings")}
+          </Link>
+          <div className="mobile-menu-divider" />
+          <Link
+            to="/favorites"
+            className={location.pathname === "/favorites" ? "active" : ""}
+            onClick={() => setMobileMenuOpen(false)}
+          >
+            <FaStar /> {t("navbar.favorites")}
+          </Link>
+          <Link
+            to="/notifications"
+            className={location.pathname === "/notifications" ? "active" : ""}
+            onClick={() => setMobileMenuOpen(false)}
+          >
+            <FaBell /> {t("navbar.notifications")}
+          </Link>
+          <div className="mobile-menu-divider" />
+          {user ? (
+            <>
+              <Link to="/profile" onClick={() => setMobileMenuOpen(false)}>
+                <FaUser /> {t("navbar.viewProfile")}
+              </Link>
+              <div className="logout-btn-mobile" onClick={handleLogout}>
+                {t("navbar.logout")}
+              </div>
+            </>
+          ) : (
+            <div
+              className="login-btn-mobile"
+              onClick={() => {
+                navigate("/login");
+                setMobileMenuOpen(false);
+              }}
+            >
+              {t("navbar.login")}
+            </div>
+          )}
+          <div className="mobile-menu-divider" />
+          <div className="mobile-language-selector">
+            <span className="mobile-lang-label">
+              <FaGlobe /> {t("navbar.language")}
+            </span>
+            <div className="mobile-lang-options">
+              <button
+                className={language === "en" ? "active" : ""}
+                onClick={() => changeLanguage("en")}
+              >
+                {t("navbar.english")}
+              </button>
+              <button
+                className={language === "tr" ? "active" : ""}
+                onClick={() => changeLanguage("tr")}
+              >
+                {t("navbar.turkish")}
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </nav>
   );
 };

@@ -85,7 +85,7 @@ const LoginPage = ({ setUser }) => {
               href="http://localhost:4000/api/users/auth/google"
             >
               <img src={googleLogo} alt="Google" />
-              {t("loginPage.loginWithGoogle")}
+              <span>{t("loginPage.loginWithGoogle")}</span>
             </a>
 
             <a
@@ -93,7 +93,7 @@ const LoginPage = ({ setUser }) => {
               href="http://localhost:4000/api/users/auth/facebook"
             >
               <img src={facebookLogo} alt="Facebook" />
-              {t("loginPage.loginWithFacebook")}
+              <span>{t("loginPage.loginWithFacebook")}</span>
             </a>
           </div>
 

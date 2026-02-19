@@ -9,8 +9,8 @@ export const HowItWorksCards = ({ cards }) => {
     elements.push(
       <div key={`card-${index}`} className="how-it-works-card-outer-wrapper">
         <div className="how-it-works-card">
+          <div className="how-it-works-card-number">{index + 1}</div>
           <div className="how-it-works-card-icon-wrapper">
-            <div className="how-it-works-card-number">{index + 1}</div>
             <div
               className="how-it-works-card-icon"
               style={
@@ -19,6 +19,7 @@ export const HowItWorksCards = ({ cards }) => {
                       backgroundImage: backgroundImage,
                       backgroundSize: "cover",
                       backgroundPosition: "center",
+                      backgroundRepeat: "no-repeat",
                     }
                   : {}
               }

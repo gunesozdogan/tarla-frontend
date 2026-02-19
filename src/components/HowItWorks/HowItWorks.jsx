@@ -2,6 +2,7 @@ import { useMemo } from "react";
 import { SECOND_CARDS_CONFIG } from "../InitialPage/initialPage.cards";
 import { useTranslation } from "react-i18next";
 import { HowItWorksCards } from "./HowItWorksCards";
+import "./HowItWorks.css";
 
 export const HowItWorks = () => {
   const { t } = useTranslation();

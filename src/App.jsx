@@ -52,7 +52,7 @@ function App() {
   });
 
   const [darkMode, setDarkMode] = useState(
-    () => localStorage.getItem("darkMode") === "true",
+    () => localStorage.getItem("darkMode") === "true"
   );
 
   var isAdmin = false;
@@ -75,7 +75,7 @@ function App() {
 
   const RenderNavbar = () => {
     const location = useLocation();
-    const hideNavbarRoutes = ["/login", "/signup"];
+    const hideNavbarRoutes = [];
     if (isAdmin && location.pathname.startsWith("/admin")) {
       return <AdminNavbar />;
     }
