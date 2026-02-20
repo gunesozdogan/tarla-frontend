@@ -38,17 +38,14 @@ const Navbar = ({ user, setUser, darkMode, setDarkMode }) => {
 
   return (
     <nav className="navbar">
-      <div className="logo-container">
+      <Link to="/" className="logo-container">
         <img src={logo} alt="Tarla Logo" />
         <h1>Tarla</h1>
-      </div>
+      </Link>
 
       {/* Desktop Navigation */}
       <div className="nav-links">
         <div className="nav-links-inner">
-          <Link to="/" className={location.pathname === "/" ? "active" : ""}>
-            <FaHome /> <span>{t("navbar.home")}</span>
-          </Link>
           <Link
             to="/search"
             className={location.pathname === "/search" ? "active" : ""}
@@ -147,13 +144,6 @@ const Navbar = ({ user, setUser, darkMode, setDarkMode }) => {
       {/* Mobile Navigation Menu */}
       {mobileMenuOpen && (
         <div className="mobile-menu">
-          <Link
-            to="/"
-            className={location.pathname === "/" ? "active" : ""}
-            onClick={() => setMobileMenuOpen(false)}
-          >
-            <FaHome /> {t("navbar.home")}
-          </Link>
           <Link
             to="/search"
             className={location.pathname === "/search" ? "active" : ""}
