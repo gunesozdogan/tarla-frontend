@@ -32,7 +32,7 @@ const MyListings = () => {
   const handleDeleteClick = (listing) => {
     setSelectedListing(listing);
     setShowDeletePopup(true);
-    setDeleteError(""); // Reset previous error
+    setDeleteError("");
   };
 
   const closePopup = () => {

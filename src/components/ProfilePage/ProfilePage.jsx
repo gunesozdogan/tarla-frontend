@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { useTranslation } from "react-i18next"; // Import useTranslation
+import { useTranslation } from "react-i18next";
 import "./ProfilePage.css";
-import editIcon from "../../assets/edit-icon.png"; // Icon for editing fields
+import editIcon from "../../assets/edit-icon.png";
 
 const ProfilePage = () => {
-  const { t } = useTranslation(); // Initialize the translation hook
+  const { t } = useTranslation();
   const [user, setUser] = useState(null);
   const [editField, setEditField] = useState(null);
   const [formData, setFormData] = useState({});
@@ -52,7 +52,7 @@ const ProfilePage = () => {
       const response = await axios.put(
         `/api/users/me`,
         {
-          ...user, // Merge old user data with new updates
+          ...user,
           ...formData,
         },
         {

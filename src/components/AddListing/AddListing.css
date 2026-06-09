@@ -71,7 +71,6 @@ body.dark-mode .add-listing-form-container-outer {
   box-sizing: border-box;
 }
 
-/* Input Fields */
 .add-listing-form-container input,
 .add-listing-form-container select,
 .add-listing-form-container textarea {
@@ -123,7 +122,6 @@ body.dark-mode .add-listing-form-container textarea:focus {
   box-shadow: 0 0 0 4px var(--color-primary-bg);
 }
 
-/* Labels */
 .add-listing-form-container label {
   display: flex;
   flex-direction: column;
@@ -151,7 +149,6 @@ body.dark-mode .add-listing-form-container label {
   color: var(--color-primary);
 }
 
-/* Crop Selection */
 .add-listing-crop-selection {
   grid-column: 1 / -1;
   padding: 1.5rem;
@@ -239,7 +236,6 @@ body.dark-mode .add-listing-crop-grid .checkbox {
   font-size: 14px !important;
 }
 
-/* Submit Button */
 .add-listing-submit-btn {
   grid-column: 1 / -1;
   padding: 14px 48px;
@@ -291,7 +287,6 @@ body.dark-mode .add-listing-crop-grid .checkbox {
   transform: translateY(-1px);
 }
 
-/* Make text areas modern */
 .add-listing-modern-textarea {
   width: 100%;
   padding: 12px 16px;
@@ -324,7 +319,6 @@ body.dark-mode .add-listing-modern-textarea:focus {
   box-shadow: 0 0 0 4px var(--color-primary-bg);
 }
 
-/* Make dropdown modern */
 .add-listing-modern-dropdown {
   width: 100%;
   padding: 12px 16px;
@@ -356,7 +350,6 @@ body.dark-mode .add-listing-modern-dropdown:focus {
   box-shadow: 0 0 0 4px var(--color-primary-bg);
 }
 
-/* Adjust spacing */
 .add-listing-form-section {
   display: flex;
   flex-direction: column;
@@ -470,7 +463,6 @@ body.dark-mode .photo-thumbnail {
   box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
 }
 
-/* Ensure all inputs have proper width */
 .full-width-input {
   width: 100% !important;
   box-sizing: border-box;
@@ -481,13 +473,11 @@ body.dark-mode .photo-thumbnail {
   box-sizing: border-box;
 }
 
-/* Text area larger version */
 .larger-textarea {
   min-height: 120px;
   resize: vertical;
 }
 
-/* Error & Success Messages */
 .error-message {
   color: #e53935;
   font-size: var(--fs-body-sm);
@@ -536,7 +526,6 @@ body.dark-mode .success-message {
   border-color: rgba(76, 175, 80, 0.4);
 }
 
-/* Responsive Design */
 @media screen and (max-width: 1024px) {
   .add-listing-form-container {
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));

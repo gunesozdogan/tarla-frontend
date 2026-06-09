@@ -1,4 +1,3 @@
-/* General Page Styles */
 .login-page {
   display: flex;
   justify-content: center;
@@ -23,7 +22,6 @@ body.dark-mode .login-page {
   background: var(--gradient-darker);
 }
 
-/* Login Container */
 .login-container {
   display: flex;
   justify-content: center;
@@ -34,7 +32,6 @@ body.dark-mode .login-page {
   box-sizing: border-box;
 }
 
-/* Card Container for the Login Form */
 .login-card {
   background: linear-gradient(
     135deg,
@@ -64,7 +61,6 @@ body.dark-mode .login-card {
   color: var(--color-gray-100);
 }
 
-/* Animation for Smooth Entry */
 @keyframes slideUp {
   from {
     opacity: 0;
@@ -89,7 +85,6 @@ body.dark-mode .login-card {
   }
 }
 
-/* Header Styles */
 .login-card h2 {
   font-size: 32px;
   font-weight: 800;
@@ -112,7 +107,6 @@ body.dark-mode .login-card p {
   color: #aaa;
 }
 
-/* Login Form */
 .login-form {
   width: 100%;
   display: flex;
@@ -178,7 +172,6 @@ body.dark-mode .login-input:focus {
   box-shadow: 0 0 0 4px var(--color-primary-20);
 }
 
-/* Login Button */
 .login-btn {
   padding: 14px 24px;
   background: linear-gradient(135deg, #5ba877 0%, #4a9963 100%);
@@ -226,7 +219,6 @@ body.dark-mode .login-input:focus {
   transform: translateY(-2px);
 }
 
-/* Social Login Section */
 .social-login {
   margin-top: 2rem;
   display: flex;
@@ -327,7 +319,6 @@ body.dark-mode .social-login::before {
   z-index: 1;
 }
 
-/* Signup Link */
 .signup-link {
   margin-top: 2rem;
   padding-top: 2rem;
@@ -374,7 +365,6 @@ body.dark-mode .signup-link p {
   transform: scaleX(1);
 }
 
-/* Error Message Styles */
 .error {
   color: #e53935;
   font-size: 14px;
@@ -393,7 +383,6 @@ body.dark-mode .error {
   border-color: rgba(229, 57, 53, 0.4);
 }
 
-/* Responsiveness */
 @media screen and (max-width: 480px) {
   .login-page {
     padding: 1.5rem 0.5rem;

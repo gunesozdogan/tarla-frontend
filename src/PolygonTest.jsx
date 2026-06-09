@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { useTranslation } from "react-i18next"; // Import useTranslation
+import { useTranslation } from "react-i18next";
 import { MapContainer, TileLayer, Polygon } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 
 const PolygonTest = () => {
-  const { t } = useTranslation(); // Initialize the translation hook
+  const { t } = useTranslation();
   const [polygonData, setPolygonData] = useState([]);
 
   useEffect(() => {
@@ -22,7 +22,7 @@ const PolygonTest = () => {
               coordinates: geojson.coordinates[0].map((coord) => [
                 coord[1],
                 coord[0],
-              ]), // Extract first ring of polygon
+              ]),
             };
           });
 
@@ -39,7 +39,6 @@ const PolygonTest = () => {
   return (
     <div style={{ height: "100vh", width: "100%" }}>
       <h2 style={{ textAlign: "center" }}>{t("polygonTest.title")}</h2>{" "}
-      {/* Use t() for translation */}
       <MapContainer
         center={[39, 32.5]}
         zoom={6}

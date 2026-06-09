@@ -17,7 +17,6 @@ import L from "leaflet";
 import MarkerClusterGroup from "@changey/react-leaflet-markercluster";
 import "../src/components/InitialPage/InitialPage.css";
 
-// Custom marker icon
 const customMarker = L.icon({
   iconUrl: "/marker-icon.png",
   shadowUrl: "/marker-shadow.png",
@@ -27,11 +26,10 @@ const customMarker = L.icon({
   shadowSize: [41, 41],
 });
 
-// Home button to reset view
 const HomeButton = () => {
   const map = useMap();
   const handleResetView = () => {
-    map.setView([39, 35], 6); // Reset to Turkey
+    map.setView([39, 35], 6);
   };
 
   return (
@@ -41,7 +39,6 @@ const HomeButton = () => {
   );
 };
 
-// Toggle between Satellite and Normal map view
 const MapStyleToggle = ({ setTileLayer }) => {
   return (
     <button
@@ -59,7 +56,6 @@ const MapStyleToggle = ({ setTileLayer }) => {
   );
 };
 
-// User Location Button
 const UserLocationButton = () => {
   const map = useMap();
   const handleLocateUser = () => {
@@ -73,7 +69,6 @@ const UserLocationButton = () => {
   );
 };
 
-// Detects user movement in map
 const MapEventHandler = ({ setFields }) => {
   useMapEvents({
     moveend: async (event) => {
@@ -107,7 +102,6 @@ const FieldsView = () => {
     "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
   );
 
-  // Fetch initial fields when the page loads (default Turkey bounds)
   useEffect(() => {
     const fetchInitialFields = async () => {
       const north = 42;
@@ -143,7 +137,6 @@ const FieldsView = () => {
 
   return (
     <div className="listing-lower-section">
-      {/* Left Section: Field Listings */}
       <div className="fields-list">
         <h2>{t("initialPage.fieldsInView")}</h2>
         {error && <p className="error">{error}</p>}
@@ -177,7 +170,6 @@ const FieldsView = () => {
           )}
         </div>
       </div>
-      {/* Right Section: Map */}
       <div className="map-container">
         <div className="map-wrapper">
           <MapContainer
@@ -194,7 +186,6 @@ const FieldsView = () => {
             <MapStyleToggle setTileLayer={setTileLayer} />
             <UserLocationButton />
 
-            {/* Clustered markers */}
             <MarkerClusterGroup>
               {fields.map((field) => (
                 <Marker

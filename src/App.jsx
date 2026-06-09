@@ -101,7 +101,6 @@ function App() {
       <div className="main-container">
         <RenderNavbar />
         <Routes>
-          {/* Open Routes (Accessible by everyone) */}
           <Route path="/" element={<InitialPage />} />
           <Route path="/login" element={<LoginPage setUser={setUser} />} />
           <Route path="/signup" element={<SignupPage />} />
@@ -111,7 +110,6 @@ function App() {
             element={<OAuthSuccess setUser={setUser} />}
           />
 
-          {/* 🔒 Protected Routes (Show Login Warning if user is not logged in) */}
           <Route
             path="/favorites"
             element={
@@ -214,7 +212,6 @@ function App() {
               <Route path="/admin/fields" element={<AdminFields />} />
             </>
           )}
-          {/* Redirect non-admin users */}
           <Route
             path="/admin/*"
             element={!isAdmin ? <Navigate to="/" /> : null}

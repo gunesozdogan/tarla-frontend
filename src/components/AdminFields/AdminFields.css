@@ -1,14 +1,12 @@
-/* Admin fields page styles */
 .admin-fields-page {
   max-width: 1400px;
   margin: 40px auto;
-  background: #eef6ee; /* Match default app background */
+  background: #eef6ee;
   padding: 30px;
   border-radius: 12px;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
 }
 
-/* Title Styling */
 .admin-fields-title {
   text-align: center;
   color: #2e6b2d;
@@ -17,18 +15,16 @@
   margin-bottom: 30px;
 }
 
-/* Fields List Grid */
 .admin-fields-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* Ensure 4 cards per row */
+  grid-template-columns: repeat(4, 1fr);
   gap: 20px;
   justify-content: center;
   padding: 20px;
 }
 
-/* Field Card Styling */
 .admin-field-card {
-  background: #f0f8f0; /* Match favorites page card background */
+  background: #f0f8f0;
   padding: 20px;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
@@ -46,7 +42,6 @@
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
-/* Field Card Text */
 .admin-field-title {
   font-size: 20px;
   color: #2e6b2d;
@@ -62,7 +57,6 @@
   text-align: center;
 }
 
-/* Delete Button */
 .admin-field-delete-btn {
   background-color: #f44336;
   color: white;
@@ -83,7 +77,6 @@
   transform: scale(1.05);
 }
 
-/* Error Message */
 .admin-field-error {
   color: red;
   text-align: center;
@@ -92,7 +85,6 @@
   font-size: 18px;
 }
 
-/* Responsive Design */
 @media (max-width: 1200px) {
   .admin-fields-grid {
     grid-template-columns: repeat(3, 1fr);

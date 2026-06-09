@@ -168,10 +168,9 @@ const AddListing = () => {
 
       const location = `${formData.province}, ${formData.district}, ${formData.neighborhood}`;
 
-      // Transform cropTypes into objects
       const crops = formData.cropTypes.map((id) => {
         if (id === 11) {
-          return { id, customName: customCropType }; // include typed value
+          return { id, customName: customCropType };
         }
         return { id };
       });
@@ -180,7 +179,7 @@ const AddListing = () => {
         ...formData,
         location,
         photos: photoUrls,
-        cropTypes: crops, // send transformed array
+        cropTypes: crops,
       };
 
       await axios.post("/api/fields", finalData, {

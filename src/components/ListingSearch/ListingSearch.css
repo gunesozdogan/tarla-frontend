@@ -1,4 +1,3 @@
-/* General Layout */
 .listing-search-page1 {
   padding: 0;
   min-height: calc(100vh - 60px);
@@ -21,7 +20,6 @@ body.dark-mode .listing-search-page1 {
   background: var(--color-bg-main);
 }
 
-/* Filters Section */
 .filters-section {
   background: linear-gradient(
     135deg,
@@ -40,7 +38,6 @@ body.dark-mode .filters-section {
   );
 }
 
-/* Filters Container */
 .filters-container {
   display: flex;
   flex-wrap: wrap;
@@ -57,7 +54,6 @@ body.dark-mode .filters-section {
   box-sizing: border-box;
 }
 
-/* Filter Inputs */
 .filters {
   display: flex;
   gap: 1rem;
@@ -154,7 +150,6 @@ body.dark-mode .filter-input:focus {
   transform: translateY(-2px);
 }
 
-/* View Toggle */
 .view-toggle {
   display: flex;
   gap: 1rem;
@@ -190,7 +185,6 @@ body.dark-mode .view-toggle button {
   transform: translateY(-2px);
 }
 
-/* Map Container */
 .map-container1 {
   width: 90%;
   height: 75vh;
@@ -204,7 +198,6 @@ body.dark-mode .view-toggle button {
   border: 1px solid var(--color-border);
 }
 
-/* Grid Layout for List View */
 .fields-grid1 {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -216,7 +209,6 @@ body.dark-mode .view-toggle button {
   box-sizing: border-box;
 }
 
-/* Card for each field */
 .field-card1 {
   background: linear-gradient(
     135deg,
@@ -250,7 +242,6 @@ body.dark-mode .field-card1:hover {
   box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3);
 }
 
-/* Title of the card */
 .field-card1 h3 {
   color: var(--color-primary);
   font-size: 20px;
@@ -259,7 +250,6 @@ body.dark-mode .field-card1:hover {
   letter-spacing: -0.5px;
 }
 
-/* Text inside the card */
 .field-card1 p {
   font-size: 14px;
   color: var(--color-text-primary);
@@ -280,7 +270,6 @@ body.dark-mode .field-card1 p strong {
   color: var(--color-heading-secondary);
 }
 
-/* View Details Button */
 .view-details-btn1 {
   margin-top: 1.25rem;
   padding: 12px 20px;
@@ -330,7 +319,6 @@ body.dark-mode .field-card1 p strong {
   transform: translateY(0);
 }
 
-/* Error Message */
 .error {
   color: #e53935;
   font-size: var(--fs-body);
@@ -348,7 +336,6 @@ body.dark-mode .error {
   border-color: rgba(229, 57, 53, 0.4);
 }
 
-/* No Fields Message */
 .no-fields1 {
   text-align: center;
   font-size: 18px;
@@ -357,7 +344,6 @@ body.dark-mode .error {
   padding: 3rem 2rem;
 }
 
-/* Responsive Design */
 @media (max-width: 1024px) {
   .fields-grid1 {
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));

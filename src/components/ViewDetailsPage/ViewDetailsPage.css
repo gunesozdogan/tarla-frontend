@@ -1,4 +1,3 @@
-/* General styles for View Details Page */
 .view-details-page {
   display: flex;
   flex-direction: row;
@@ -26,7 +25,6 @@
   transform: scale(1.1);
 }
 
-/* Left Section: Details Content */
 .details-info-container {
   flex: 2;
   background-color: #f0f8f0;
@@ -39,7 +37,6 @@
   overflow-y: auto;
 }
 
-/* Header */
 .details-header {
   display: flex;
   justify-content: space-between;
@@ -51,7 +48,7 @@
 
 .details-header h1 {
   font-size: 26px;
-  color: #2e6b2d; /* Visible in light mode */
+  color: #2e6b2d;
   font-weight: bold;
   margin: 0;
 }
@@ -63,10 +60,9 @@
   margin: 0;
 }
 
-/* Info Section */
 .details-info p {
   font-size: 14px;
-  color: #333; /* Ensures visibility in light mode */
+  color: #333;
   margin-bottom: 4px;
   line-height: 1.4;
 }
@@ -75,7 +71,6 @@
   color: #2e6b2d;
 }
 
-/* Photos Section */
 .details-photos-section {
   padding-bottom: 0 !important;
   margin-bottom: 0 !important;
@@ -90,8 +85,8 @@
   display: grid;
   grid-template-columns: repeat(5, 140px);
   gap: 10px;
-  align-items: start; /* Ensures items align at the top */
-  justify-content: start; /* Aligns them properly */
+  align-items: start;
+  justify-content: start;
 }
 
 .details-photo {
@@ -100,10 +95,9 @@
   object-fit: cover;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  margin-bottom: 0; /* Ensure no extra spacing */
-  padding-bottom: 0; /* Reset padding if needed */
+  margin-bottom: 0;
+  padding-bottom: 0;
 }
-/* More Photos Button */
 .details-more-photos-btn {
   width: 130px;
   height: 130px;
@@ -128,7 +122,6 @@
   transform: scale(1.05);
 }
 
-/* Modal Styles */
 .photo-modal-overlay {
   position: fixed;
   top: 0;
@@ -139,15 +132,15 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 6000; /* Ensures modal is above the map */
+  z-index: 6000;
 }
 
 .photo-modal {
   background: #f0f8f0;
-  padding: 30px; /* More padding for a spacious feel */
+  padding: 30px;
   border-radius: 12px;
-  width: 65%; /* Increased width */
-  height: 85%; /* Increased height */
+  width: 65%;
+  height: 85%;
   text-align: center;
   position: relative;
   display: flex;
@@ -173,7 +166,6 @@
   border-radius: 8px;
 }
 
-/* More Photos Button */
 .details-more-photos-btn {
   width: 130px;
   height: 130px;
@@ -194,7 +186,6 @@
   position: relative;
 }
 
-/* Blurred Overlay Effect */
 .details-more-photos-btn::before {
   content: "";
   position: absolute;
@@ -202,30 +193,27 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+  background: rgba(0, 0, 0, 0.5);
   backdrop-filter: blur(5px);
   border-radius: 8px;
 }
 
-/* + More Text */
 .details-more-photos-btn span {
   position: relative;
   z-index: 2;
   font-size: 18px;
 }
 
-/* Photo Counter */
 .photo-count {
   font-size: 20px;
   font-weight: bold;
   color: #2e6b2d;
-  margin-top: 20px; /* Adjusted spacing */
+  margin-top: 20px;
   display: flex;
   align-items: center;
-  gap: 15px; /* Space between prev/next buttons and counter */
+  gap: 15px;
 }
 
-/* Adjust navigation buttons to be near the photo counter */
 .photo-modal-prev,
 .photo-modal-next {
   font-size: 24px;
@@ -239,13 +227,12 @@
   align-items: center;
 }
 
-/* Align buttons near the photo count */
 .photo-modal-prev {
-  order: -1; /* Move it before the count */
+  order: -1;
 }
 
 .photo-modal-next {
-  order: 1; /* Move it after the count */
+  order: 1;
 }
 
 .photo-modal-close {
@@ -258,7 +245,6 @@
   border: none;
 }
 
-/* Right Section: Map */
 .details-map-container {
   flex: 1.5;
   background-color: #f0f8f0;
@@ -268,7 +254,7 @@
   align-items: center;
   justify-content: center;
   padding: 15px;
-  height: 80vh; /* Ensuring the map fits the screen without scrollbar */
+  height: 80vh;
 }
 
 .details-map {
@@ -277,13 +263,11 @@
   border-radius: 12px;
 }
 
-/* Dark Mode */
 body.dark-mode .view-details-page {
   background-color: #1e1e1e;
   color: #f5f5f5;
 }
 
-/* Error Messages */
 .details-error-message {
   color: red;
   text-align: center;
@@ -297,7 +281,6 @@ body.dark-mode .view-details-page {
   font-size: var(--fs-body);
 }
 
-/* Dark Mode */
 body.dark-mode .view-details-page {
   background-color: #1e1e1e;
   color: #f5f5f5;
@@ -317,5 +300,5 @@ body.dark-mode .details-map-container {
 body.dark-mode .details-info p,
 body.dark-mode .details-price,
 body.dark-mode .details-header h1 {
-  color: #f5f5f5; /* Visible in dark mode */
+  color: #f5f5f5;
 }

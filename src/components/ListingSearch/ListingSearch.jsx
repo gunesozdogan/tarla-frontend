@@ -20,7 +20,7 @@ const customMarker = L.icon({
 });
 
 const ListingSearch = (callback, deps) => {
-  const { t } = useTranslation(); // Hook for translation
+  const { t } = useTranslation();
   const navigate = useNavigate();
   const [fields, setFields] = useState([]);
   const [view, setView] = useState("map");
@@ -61,9 +61,7 @@ const ListingSearch = (callback, deps) => {
 
   return (
     <div className="listing-search-page1">
-      {/* Filters & View Toggle */}
       <div className="filters-container">
-        {/* Toggle Buttons */}
         <div className="view-toggle">
           <button
             className={view === "map" ? "active" : ""}
@@ -79,7 +77,6 @@ const ListingSearch = (callback, deps) => {
           </button>
         </div>
 
-        {/* Filter Inputs */}
         <div className="filters">
           <input
             type="number"
@@ -107,7 +104,6 @@ const ListingSearch = (callback, deps) => {
           />
         </div>
 
-        {/* Action Buttons */}
         <div className="filter-buttons">
           <button className="apply-filters-btn" onClick={fetchFields}>
             {t("listingSearch.applyFilters")}
@@ -122,10 +118,8 @@ const ListingSearch = (callback, deps) => {
         </div>
       </div>
 
-      {/* Error Message */}
       {error && <p className="error">{error}</p>}
 
-      {/* List View */}
       {view === "list" && (
         <div className="fields-grid1">
           {fields.length > 0 ? (
@@ -158,7 +152,6 @@ const ListingSearch = (callback, deps) => {
         </div>
       )}
 
-      {/* Map View */}
       {view === "map" && (
         <div className="map-container1">
           <MapContainer

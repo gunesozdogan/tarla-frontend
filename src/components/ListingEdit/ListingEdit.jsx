@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useParams, useNavigate } from "react-router-dom";
-import { useTranslation } from "react-i18next"; // Import useTranslation hook
+import { useTranslation } from "react-i18next";
 import "./ListingEdit.css";
 
 const ListingEdit = () => {
   const { listingId } = useParams();
   const navigate = useNavigate();
-  const { t } = useTranslation(); // Access the translation function
+  const { t } = useTranslation();
   const [formData, setFormData] = useState({
     name: "",
     size: "",

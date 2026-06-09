@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
-import { useTranslation } from "react-i18next"; // Import useTranslation hook
+import { useTranslation } from "react-i18next";
 import "./ListingAnalytics.css";
 import { Pie, Doughnut, Bar } from "react-chartjs-2";
 import {
@@ -15,7 +15,6 @@ import {
   Legend,
 } from "chart.js";
 
-// Register Chart.js components
 ChartJS.register(
   CategoryScale,
   LinearScale,
@@ -30,7 +29,7 @@ const ListingAnalytics = () => {
   const { fieldId } = useParams();
   const [analytics, setAnalytics] = useState(null);
   const [error, setError] = useState("");
-  const { t } = useTranslation(); // Access the translation function
+  const { t } = useTranslation();
 
   useEffect(() => {
     const fetchAnalytics = async () => {
@@ -41,7 +40,7 @@ const ListingAnalytics = () => {
         setAnalytics(response.data);
       } catch (err) {
         console.error("Error fetching analytics:", err);
-        setError(t("listingAnalytics.error")); // Use t() to translate the error message
+        setError(t("listingAnalytics.error"));
       }
     };
 
@@ -50,7 +49,7 @@ const ListingAnalytics = () => {
 
   if (error) return <p className="analytics-error">{error}</p>;
   if (!analytics)
-    return <p className="analytics-loading">{t("listingAnalytics.loading")}</p>; // Use t() to translate loading message
+    return <p className="analytics-loading">{t("listingAnalytics.loading")}</p>;
 
   return (
     <div className="analytics-container">

@@ -1,70 +1,154 @@
-# Getting Started with Create React App
+# Tarla — Frontend
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Web application for listing, discovering and managing farmlands (tarla) in Turkey. Users browse parcels on an interactive map, list their own land for sale, save favorites, view per‑listing analytics, and manage everything from a personalized dashboard. Parcel boundaries and cadastral data (ada/parsel) are sourced from Turkey's TKGM system on the backend.
 
-## Available Scripts
+This repository contains the **React single‑page frontend**. It talks to a separate Node/Express + PostgreSQL backend (`tarla-backend-node`) over a REST API.
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## Tech Stack
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+| Area | Technology |
+| --- | --- |
+| Framework | React 18 (Create React App / `react-scripts` 5) |
+| Routing | React Router DOM v7 |
+| Maps | Leaflet, React‑Leaflet, Leaflet.markercluster |
+| Charts | Chart.js + react‑chartjs‑2 |
+| HTTP | Axios |
+| i18n | i18next + react‑i18next (English & Turkish) |
+| Icons | react‑icons |
+| Turkey data | turkey‑neighbourhoods |
+| Tooling | Prettier, Testing Library (Jest DOM), web‑vitals |
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+## Features
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Authentication
+- **Email/password** sign up and login
+- **Google OAuth** login (handled by the backend, frontend receives a token)
+- **Facebook OAuth** login (same flow)
+- OAuth callback handled at `/oauth-success`, which stores the JWT and user
+- Session persisted in `localStorage` with a 1‑hour expiry
+- **Protected routes** — unauthenticated users are redirected/shown a login warning
+- **Role‑based access** — admin users get a dedicated navbar and admin pages
 
-### `npm run build`
+### Listings
+- **Create** a listing with location (province / district / neighborhood), size, price, photos and details
+- **Edit** and **delete** your own listings
+- **My Listings** dashboard
+- **Listing detail** page with full information and parcel geometry
+- **Search** listings with filters
+- **Boosted** listings support
+- **Favorites** — save and manage listings you like
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Map experience
+- Interactive Leaflet map centered on Turkey
+- **Marker clustering** for dense areas
+- **Satellite / standard** view toggle
+- **"Locate me"** button using browser geolocation
+- Fetches fields dynamically based on the visible map bounds
+- Renders real parcel polygons (GeoJSON) from cadastral data
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Analytics
+- Per‑listing analytics page with charts (views, price history, etc.) powered by Chart.js
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Other
+- **Notifications** page
+- **Profile** management
+- **Dark mode** toggle (persisted in `localStorage`)
+- **Internationalization** — full English and Turkish translations
+- **Admin panel** — manage fields, dashboard and incoming requests
 
-### `npm run eject`
+---
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Project Structure
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```
+src/
+├── App.jsx                 # Root component: routing, auth state, navbar/footer
+├── index.jsx               # Entry point (i18n + React DOM)
+├── i18n.js                 # i18next setup (en / tr)
+├── ProtectedRoute.jsx      # Guard for authenticated-only routes
+├── 0AuthSuccess.jsx        # OAuth callback handler (stores token + user)
+├── FieldsView.jsx          # Main interactive map view
+├── PolygonTest.jsx         # Parcel polygon rendering test
+├── api/
+│   └── axios.js            # Axios instance / API config
+├── assets/                 # Logos, icons, marker images
+├── locales/                # Translation files (en, tr)
+├── components/
+│   ├── Navbar/ AdminNavbar/ Footer/ Hero/ HowItWorks/
+│   ├── InitialPage/ CardSection/        # Landing page
+│   ├── LoginPage/ SignupPage/ LoginWarning/
+│   ├── AddListing/ ListingEdit/ MyListings/ ViewDetailsPage/
+│   ├── ListingSearch/ FavoritesPage/
+│   ├── ListingAnalytics/                # Chart.js analytics
+│   ├── NotificationPage/ ProfilePage/
+│   ├── AdminFields/                     # Admin: field management
+│   └── icons/ IconWrapper/
+├── App.css / index.css / variables.css  # Global styles & CSS variables
+└── setupTests.js           # Testing Library / jest-dom setup
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Routes
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+| Path | Page | Access |
+| --- | --- | --- |
+| `/` | Landing page | Public |
+| `/login`, `/signup` | Auth | Public |
+| `/how-it-works` | Info | Public |
+| `/oauth-success` | OAuth callback | Public |
+| `/search` | Listing search | Protected |
+| `/add-listing` | Create listing | Protected |
+| `/viewdetails/:id` | Listing detail | Protected |
+| `/editlisting/:listingId` | Edit listing | Protected |
+| `/mylistings` | My listings | Protected |
+| `/mylistings/:fieldId/analytics` | Listing analytics | Protected |
+| `/favorites` | Favorites | Protected |
+| `/notifications` | Notifications | Protected |
+| `/profile` | Profile | Protected |
+| `/fieldsView` | Map view | Protected |
+| `/admin/fields` | Field management | Admin |
+| `/admin/dashboard`, `/admin/requests` | Admin pages | Admin |
 
-## Learn More
+---
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Getting Started
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Prerequisites
+- Node.js >= 18
+- The backend (`tarla-backend-node`) running locally on port **4000**
 
-### Code Splitting
+### Install & run
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```bash
+npm install
+npm start
+```
 
-### Analyzing the Bundle Size
+The app runs on **http://localhost:3001**. In development, API requests are forwarded to the backend via the `proxy` setting in `package.json` (`http://localhost:4000`).
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### Environment variables
 
-### Making a Progressive Web App
+| Variable | Used in | Description |
+| --- | --- | --- |
+| `REACT_APP_API_BASE_URL` | Production | Absolute backend URL (set in `.env.production` / Railway). Not needed locally — the dev proxy handles it. |
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+---
 
-### Advanced Configuration
+## Scripts
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+| Command | Description |
+| --- | --- |
+| `npm start` | Run the dev server on port 3001 |
+| `npm run build` | Production build into `build/` |
+| `npm test` | Run tests in watch mode |
+| `npm run format` | Format the codebase with Prettier |
+| `npm run format:check` | Check formatting without writing |
 
-### Deployment
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## Deployment
 
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+The app builds to a static bundle and is configured for Railway (`railway.toml`). Set `REACT_APP_API_BASE_URL` to the deployed backend URL in the Railway environment before building.

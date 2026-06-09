@@ -78,7 +78,6 @@ const Navbar = ({ user, setUser, darkMode, setDarkMode }) => {
         <h1>Tarla</h1>
       </Link>
 
-      {/* Desktop Navigation */}
       <div className="nav-links">
         <div className="nav-links-inner" ref={navInnerRef}>
           <div className="nav-highlight" ref={highlightRef}></div>
@@ -171,7 +170,6 @@ const Navbar = ({ user, setUser, darkMode, setDarkMode }) => {
         </div>
       </div>
 
-      {/* Mobile Hamburger Menu */}
       <button
         className="hamburger-menu"
         onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -180,7 +178,6 @@ const Navbar = ({ user, setUser, darkMode, setDarkMode }) => {
         {mobileMenuOpen ? <FaTimes /> : <FaBars />}
       </button>
 
-      {/* Mobile Navigation Menu */}
       {mobileMenuOpen && (
         <div className="mobile-menu">
           <Link

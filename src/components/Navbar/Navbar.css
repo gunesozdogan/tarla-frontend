@@ -1,4 +1,3 @@
-/* General Navbar Styles */
 .navbar {
   background: var(--gradient-dark);
   padding: 1rem 2rem;
@@ -39,7 +38,6 @@ body.dark-mode .navbar {
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
 }
 
-/* Logo Container */
 .navbar .logo-container {
   display: flex;
   align-items: center;
@@ -89,7 +87,6 @@ body.dark-mode .navbar {
   background-clip: text;
 }
 
-/* Navigation Links */
 .navbar .nav-links {
   display: flex;
   justify-content: space-between;
@@ -104,12 +101,10 @@ body.dark-mode .navbar {
   align-items: center;
 }
 
-/* First nav-links-inner: container for sliding highlight */
 .navbar .nav-links-inner:first-child {
   position: relative;
 }
 
-/* Floating highlight - slides horizontally between tabs */
 .navbar .nav-links-inner:first-child .nav-highlight {
   position: absolute;
   top: 0;
@@ -125,7 +120,6 @@ body.dark-mode .navbar {
   pointer-events: none;
 }
 
-/* First nav-links-inner: Buy Lands, Sell Your Land, My Lands */
 .navbar .nav-links-inner:first-child a {
   color: rgba(255, 255, 255, 0.9);
   text-decoration: none;
@@ -185,7 +179,6 @@ body.dark-mode .navbar {
   gap: 1.5rem;
 }
 
-/* General nav-links a (for other links) */
 .navbar .nav-links-inner:last-child a {
   color: rgba(255, 255, 255, 0.9);
   text-decoration: none;
@@ -209,7 +202,6 @@ body.dark-mode .navbar {
   color: var(--color-primary);
 }
 
-/* Profile Section */
 .navbar .profile {
   position: relative;
   cursor: pointer;
@@ -223,7 +215,6 @@ body.dark-mode .navbar {
   transform: scale(1.1);
 }
 
-/* Profile Dropdown */
 .navbar .profile-dropdown {
   position: absolute;
   right: 0;
@@ -245,7 +236,6 @@ body.dark-mode .navbar {
   display: flex;
 }
 
-/* Profile Dropdown Links */
 .navbar .profile-dropdown a {
   color: var(--color-primary-dark) !important;
   z-index: 3000;
@@ -262,7 +252,6 @@ body.dark-mode .navbar {
   transform: translateX(4px);
 }
 
-/* Login & Logout Buttons */
 .navbar .profile-dropdown .login-btn,
 .navbar .profile-dropdown .logout-btn {
   background-color: var(--color-primary-dark);
@@ -297,7 +286,6 @@ body.dark-mode .navbar {
   box-shadow: 0 4px 12px rgba(229, 57, 53, 0.3);
 }
 
-/* Dark Mode Toggle */
 .dark-mode-toggle {
   display: flex;
   align-items: center;
@@ -348,7 +336,6 @@ input:checked + .toggle-slider:before {
   transform: translateX(24px);
 }
 
-/* Language Selector */
 .language-selector {
   position: relative;
   display: flex;
@@ -413,7 +400,6 @@ input:checked + .toggle-slider:before {
   transform: translateX(4px);
 }
 
-/* Hamburger Menu */
 .hamburger-menu {
   display: none;
   background: none;
@@ -431,7 +417,6 @@ input:checked + .toggle-slider:before {
   transform: scale(1.15);
 }
 
-/* Mobile Menu */
 .mobile-menu {
   display: none;
   position: absolute;
@@ -517,7 +502,6 @@ body.dark-mode .mobile-menu {
   transform: scale(0.98);
 }
 
-/* Dropdown Fade Animation */
 @keyframes dropdownFade {
   from {
     opacity: 0;
@@ -529,7 +513,6 @@ body.dark-mode .mobile-menu {
   }
 }
 
-/* Slide Down Animation */
 @keyframes slideDown {
   from {
     opacity: 0;
@@ -541,7 +524,6 @@ body.dark-mode .mobile-menu {
   }
 }
 
-/* Mobile Responsive Design */
 @media screen and (max-width: 1024px) {
   .navbar {
     gap: 1rem;
@@ -574,7 +556,6 @@ body.dark-mode .mobile-menu {
   }
 }
 
-/* Tablet - Medium screens */
 @media screen and (max-width: 900px) {
   .navbar {
     padding: 1rem;
@@ -610,7 +591,6 @@ body.dark-mode .mobile-menu {
   }
 }
 
-/* Small tablets and large phones */
 @media screen and (max-width: 768px) {
   .navbar {
     padding: 0.8rem 1rem;
@@ -643,7 +623,6 @@ body.dark-mode .mobile-menu {
   }
 }
 
-/* Mobile phones */
 @media screen and (max-width: 600px) {
   .navbar {
     padding: 0.8rem;

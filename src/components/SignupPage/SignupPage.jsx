@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import { useTranslation } from "react-i18next"; // Import useTranslation
+import { useTranslation } from "react-i18next";
 import "./SignupPage.css";
 
 const SignupPage = () => {
-  const { t } = useTranslation(); // Initialize translation hook
+  const { t } = useTranslation();
   const [formData, setFormData] = useState({
     username: "",
     email: "",
@@ -28,7 +28,6 @@ const SignupPage = () => {
     e.preventDefault();
     const { username, email, password, confirmPassword } = formData;
 
-    // Validate form data
     if (password !== confirmPassword) {
       setError(t("signupPage.errorPasswordMismatch"));
       return;
@@ -45,7 +44,6 @@ const SignupPage = () => {
         setSuccess(t("signupPage.successSignup"));
         setError("");
 
-        // Redirect to login page after 2 seconds
         setTimeout(() => {
           navigate("/login");
         }, 1000);

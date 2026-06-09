@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
-import { useTranslation } from "react-i18next"; // Import useTranslation
+import { useTranslation } from "react-i18next";
 import "./ViewDetailsPage.css";
 import heartEmpty from "../../assets/heart-empty.png";
 import heartFilled from "../../assets/heart-filled.png";
@@ -9,14 +9,14 @@ import { MapContainer, TileLayer, Polygon, Popup } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import L from "leaflet";
 
-const BACKEND_URL = "http://localhost:4000"; // Adjust if needed
+const BACKEND_URL = "http://localhost:4000";
 new L.Icon({
   iconUrl: require("../../assets/marker-icon.png"),
   iconSize: [30, 45],
   iconAnchor: [15, 45],
 });
 const ViewDetailsPage = () => {
-  const { t } = useTranslation(); // Initialize translation hook
+  const { t } = useTranslation();
   const { id } = useParams();
   const [field, setField] = useState(null);
   const [polygonData, setPolygonData] = useState(null);
@@ -59,7 +59,7 @@ const ViewDetailsPage = () => {
 
     fetchFieldDetails();
     fetchPolygonData();
-  }, [id, t]); // Include t() as dependency for re-rendering translations
+  }, [id, t]);
 
   if (error) return <p className="details-error-message">{error}</p>;
   if (!field)

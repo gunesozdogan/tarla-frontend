@@ -1,4 +1,3 @@
-/* General App styles */
 body,
 html {
   margin: 0;
@@ -10,8 +9,8 @@ html {
     background-color 0.3s,
     color 0.3s;
   min-height: 100vh;
-  height: 100%; /* Ensure body and html can stretch to viewport height */
-  overflow-y: auto; /* Allow scrolling for overflowing content */
+  height: 100%;
+  overflow-y: auto;
   box-sizing: border-box;
 }
 
@@ -30,7 +29,7 @@ body.dark-mode {
 
 .App {
   text-align: center;
-  min-height: 100vh; /* Ensures App takes the full height of its parent */
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
 }
@@ -48,7 +47,7 @@ body.dark-mode {
 
 .App-header {
   background-color: #282c34;
-  min-height: 100vh; /* Full height for header */
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -61,7 +60,6 @@ body.dark-mode {
   color: #61dafb;
 }
 
-/* Smooth spin animation */
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -71,7 +69,6 @@ body.dark-mode {
   }
 }
 
-/* Smooth animations */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -81,7 +78,6 @@ body.dark-mode {
   }
 }
 
-/* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
 }
@@ -95,7 +91,6 @@ body.dark-mode {
   background-color: #f0f4f0;
 }
 
-/* Smooth fade-in for pages */
 .page-enter {
   opacity: 0;
   transform: translateY(10px);
@@ -109,7 +104,6 @@ body.dark-mode {
     transform 0.3s;
 }
 
-/* Dark mode toggle styles */
 .dark-mode-toggle {
   display: flex;
   align-items: center;

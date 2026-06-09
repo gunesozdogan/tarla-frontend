@@ -1,4 +1,3 @@
-/* General Page Styling */
 .notification-page {
   max-width: 600px;
   margin: 40px auto;
@@ -10,7 +9,6 @@
   background: transparent;
 }
 
-/* Page Title */
 .notification-page h1 {
   font-size: 24px;
   color: #2e6b2d;
@@ -20,21 +18,18 @@
   gap: 10px;
 }
 
-/* No Notifications */
 .no-notifications {
   font-size: var(--fs-body);
   color: #777;
   margin-top: 20px;
 }
 
-/* Notification List */
 .notification-list {
   list-style: none;
   padding: 0;
   margin-top: 20px;
 }
 
-/* Notification Item */
 .notification-item {
   background: #eef6ee;
   padding: 12px;
@@ -47,30 +42,25 @@
   position: relative;
 }
 
-/* Unread Notifications */
 .notification-item.unread {
   font-weight: bold;
 }
 
-/* Read Notifications */
 .notification-item.read {
   opacity: 0.6;
 }
 
-/* Notification Content */
 .notification-content {
   display: flex;
   flex-direction: column;
   gap: 5px;
 }
 
-/* Notification Text */
 .notification-text {
   font-size: var(--fs-body);
   color: #333;
 }
 
-/* Notification Time */
 .notification-time {
   font-size: 14px;
   color: #555;
@@ -79,13 +69,11 @@
   gap: 5px;
 }
 
-/* Time Icon */
 .time-icon {
   color: #888;
   font-size: 14px;
 }
 
-/* Mark as Read Button (Tick Icon) */
 .mark-read-btn {
   background: none;
   border: none;
@@ -99,7 +87,6 @@
   transform: scale(1.1);
 }
 
-/* Error Message */
 .notification-error {
   color: red;
   text-align: center;
@@ -107,7 +94,6 @@
   margin-top: 20px;
 }
 
-/* Responsive Design */
 @media screen and (max-width: 768px) {
   .notification-page {
     max-width: 90%;

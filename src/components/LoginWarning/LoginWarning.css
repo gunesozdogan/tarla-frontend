@@ -1,14 +1,12 @@
-/* 🔒 Full-Screen Centered Warning */
 .login-warning-container {
   display: flex;
   align-items: center;
   justify-content: center;
   height: 100vh;
   width: 100vw;
-  background: linear-gradient(135deg, #d1e8d1, #a6d6a6); /* Soft green-blue */
+  background: linear-gradient(135deg, #d1e8d1, #a6d6a6);
 }
 
-/* 🛑 Warning Box */
 .login-warning-box {
   text-align: center;
   background: white;
@@ -18,23 +16,20 @@
   width: 350px;
 }
 
-/* 🔐 Title */
 .login-warning-box h2 {
   font-size: 22px;
-  color: #2e6b2d; /* Dark green */
+  color: #2e6b2d;
   margin-bottom: 10px;
 }
 
-/* 📝 Message */
 .login-warning-box p {
   font-size: var(--fs-body);
   color: #555;
   margin-bottom: 20px;
 }
 
-/* 🔘 Login Button */
 .login-btn {
-  background: #2e6b2d; /* Matching button color */
+  background: #2e6b2d;
   color: white;
   padding: 10px 15px;
   border: none;
@@ -45,5 +40,5 @@
 }
 
 .login-btn:hover {
-  background: #244c22; /* Slightly darker on hover */
+  background: #244c22;
 }

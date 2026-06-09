@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { useTranslation } from "react-i18next"; // Import useTranslation
+import { useTranslation } from "react-i18next";
 import "./NotificationPage.css";
-import { FaBell, FaCheck, FaClock } from "react-icons/fa"; // Icons
+import { FaBell, FaCheck, FaClock } from "react-icons/fa";
 
 const NotificationPage = () => {
-  const { t } = useTranslation(); // Initialize the translation hook
+  const { t } = useTranslation();
   const [notifications, setNotifications] = useState([]);
   const [error, setError] = useState("");
 
@@ -18,11 +18,11 @@ const NotificationPage = () => {
         setNotifications(response.data);
       } catch (err) {
         console.error("Error fetching notifications:", err);
-        setError(t("notificationPage.error")); // Use t() to fetch error text
+        setError(t("notificationPage.error"));
       }
     };
     fetchNotifications();
-  }, [t]); // Add t() as a dependency
+  }, [t]);
 
   const markAsRead = async (notificationId) => {
     try {
@@ -43,7 +43,6 @@ const NotificationPage = () => {
     }
   };
 
-  // Function to format the timestamp nicely
   const formatTimestamp = (timestamp) => {
     const date = new Date(timestamp);
     return date.toLocaleString("en-US", {
