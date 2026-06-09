@@ -186,25 +186,13 @@
 }
 
 @media screen and (max-width: 1024px) {
+  .initial-page-sections {
+    gap: 2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
   .initial-page-section-item {
-    max-width: 100%;
-    flex: 1;
-    min-width: 250px;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .initial-page-section-item {
-    max-width: 100%;
-    width: 100%;
-  }
-
-  .initial-page-section-inner-image {
-    height: 140px;
-  }
-
-  .initial-page-section-item-button {
-    width: 100%;
-    align-self: stretch;
+    min-width: 80%;
   }
 }

@@ -111,7 +111,7 @@ const ViewDetailsPage = () => {
       <div className="details-info-container">
         <div className="details-header">
           <h1>{field.name}</h1>
-          <p className="details-price">${field.price.toLocaleString()}</p>
+          <p className="details-price">{field.price != null ? `${Number(field.price).toLocaleString("tr-TR")} ₺` : "-"}</p>
           <button className="favorite-btn" onClick={toggleFavorite}>
             <img
               src={isFavorite ? heartFilled : heartEmpty}
@@ -134,7 +134,8 @@ const ViewDetailsPage = () => {
             {field.location}
           </p>
           <p>
-            <strong>{t("viewDetailsPage.fieldSize")}</strong> {field.size} acres
+            <strong>{t("viewDetailsPage.fieldSize")}</strong>{" "}
+            {field.size != null ? `${Math.round(Number(field.size)).toLocaleString()} m²` : "-"}
           </p>
           <p>
             <strong>{t("viewDetailsPage.fieldRainfall")}</strong>{" "}

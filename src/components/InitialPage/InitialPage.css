@@ -284,6 +284,21 @@ body.dark-mode .view-details-btn:hover {
     flex-direction: column;
     padding: 3rem 1rem;
     align-items: center;
+    gap: 1.5rem;
+  }
+
+  .initial-page-section-item {
+    max-width: 100%;
+    width: 100%;
+    flex: 1 1 100%;
+  }
+
+  .initial-page-section-inner-image {
+    height: 140px;
+  }
+
+  .initial-page-section-item-button {
+    align-self: stretch;
   }
 }
 
@@ -294,10 +309,5 @@ body.dark-mode .view-details-btn:hover {
 
   .map-container {
     width: 60%;
-  }
-
-  .initial-page-sections {
-    padding: 4rem 1.5rem;
-    gap: 1.5rem;
   }
 }

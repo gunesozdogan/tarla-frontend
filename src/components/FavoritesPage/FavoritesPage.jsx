@@ -40,10 +40,10 @@ const FavoritesPage = () => {
                 📍 {t("favoritesPage.location")}: {field.location}
               </p>
               <p>
-                📏 {t("favoritesPage.size")}: {field.size} acres
+                📏 {t("favoritesPage.size")}: {field.size != null ? `${Math.round(Number(field.size)).toLocaleString()} m²` : "-"}
               </p>
               <p>
-                💵 {t("favoritesPage.price")}: ${field.price}
+                💵 {t("favoritesPage.price")}: {field.price != null ? `${Number(field.price).toLocaleString("tr-TR")} ₺` : "-"}
               </p>
               <button
                 className="view-details-btn"

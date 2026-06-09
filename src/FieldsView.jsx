@@ -157,12 +157,12 @@ const FieldsView = () => {
                   {field.location}
                 </p>
                 <p>
-                  📏 <strong>{t("initialPage.size")}:</strong> {field.size}{" "}
-                  acres
+                  📏 <strong>{t("initialPage.size")}:</strong>{" "}
+                  {field.size != null ? `${Math.round(Number(field.size)).toLocaleString()} m²` : "-"}
                 </p>
                 <p>
-                  💵 <strong>{t("initialPage.price")}:</strong> $
-                  {field.price.toLocaleString()}
+                  💵 <strong>{t("initialPage.price")}:</strong>{" "}
+                  {field.price != null ? `${Number(field.price).toLocaleString("tr-TR")} ₺` : "-"}
                 </p>
                 <button
                   className="view-details-btn"
@@ -208,9 +208,9 @@ const FieldsView = () => {
                       <br />
                       📍 {field.location}
                       <br />
-                      📏 {field.size} acres
+                      📏 {field.size != null ? `${Math.round(Number(field.size)).toLocaleString()} m²` : "-"}
                       <br />
-                      💵 ${field.price.toLocaleString()}
+                      💵 {field.price != null ? `${Number(field.price).toLocaleString("tr-TR")} ₺` : "-"}
                       <br />
                       <button
                         className="popup-details-btn"

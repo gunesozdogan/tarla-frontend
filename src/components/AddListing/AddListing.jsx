@@ -3,7 +3,7 @@ import axios from "axios";
 import "./AddListing.css";
 import {
   FaMapMarkerAlt,
-  FaDollarSign,
+  FaLiraSign,
   FaSeedling,
   FaTint,
   FaFileAlt,
@@ -139,10 +139,6 @@ const AddListing = () => {
     setError("");
     setSuccess("");
 
-    if (formData.cropTypes.length === 0) {
-      setError(t("addListingPage.croptypeMissing"));
-      return;
-    }
 
     if (formData.cropTypes.includes(11) && !customCropType.trim()) {
       setError(t("addListingPage.cropTypeOptions.errorEnterOtherCrop"));
@@ -345,14 +341,13 @@ const AddListing = () => {
             </label>
             <label>
               <span>
-                <FaDollarSign /> {t("addListingPage.price")}:
+                <FaLiraSign /> {t("addListingPage.price")}:
               </span>
               <input
                 type="number"
                 name="price"
                 value={formData.price}
                 onChange={handleInputChange}
-                required
               />
             </label>
             <label>
@@ -364,7 +359,6 @@ const AddListing = () => {
                 name="annualRainfall"
                 value={formData.annualRainfall}
                 onChange={handleInputChange}
-                required
               />
             </label>
           </div>
@@ -378,7 +372,6 @@ const AddListing = () => {
                 name="soilQualityId"
                 value={formData.soilQualityId}
                 onChange={handleInputChange}
-                required
                 className="add-listing-modern-dropdown full-width-input2"
               >
                 <option value="">
@@ -399,7 +392,6 @@ const AddListing = () => {
                 name="description"
                 value={formData.description}
                 onChange={handleInputChange}
-                required
                 className="add-listing-modern-textarea full-width-input larger-textarea"
                 placeholder={t("addListingPage.placeholderDescription")}
               />
@@ -414,7 +406,6 @@ const AddListing = () => {
                 onChange={handleInputChange}
                 className="add-listing-modern-textarea full-width-input larger-textarea"
                 placeholder={t("addListingPage.placeholderHistoricalData")}
-                required
               />
             </label>
           </div>

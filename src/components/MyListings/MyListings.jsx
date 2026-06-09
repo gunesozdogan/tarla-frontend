@@ -73,12 +73,12 @@ const MyListings = () => {
                 {listing.location}
               </p>
               <p>
-                📏 <strong>{t("myListings.sizeLabel")}</strong> {listing.size}{" "}
-                acres
+                📏 <strong>{t("myListings.sizeLabel")}</strong>{" "}
+                {listing.size != null ? `${Math.round(Number(listing.size)).toLocaleString()} m²` : "-"}
               </p>
               <p>
-                💵 <strong>{t("myListings.priceLabel")}</strong> $
-                {listing.price.toLocaleString()}
+                💵 <strong>{t("myListings.priceLabel")}</strong>{" "}
+                {listing.price != null ? `${Number(listing.price).toLocaleString("tr-TR")} ₺` : "-"}
               </p>
               <div className="my-listing-actions">
                 <button

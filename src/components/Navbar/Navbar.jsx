@@ -1,7 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect, useCallback } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import {
-  FaHome,
   FaStar,
   FaSearch,
   FaThLarge,
@@ -24,6 +23,42 @@ const Navbar = ({ user, setUser, darkMode, setDarkMode }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [language, setLanguage] = useState(i18n.language || "en");
 
+  const navInnerRef = useRef(null);
+  const highlightRef = useRef(null);
+  const linkRefs = useRef([]);
+
+  const navPaths = ["/search", "/add-listing", "/mylistings"];
+
+  const updateHighlight = useCallback(() => {
+    const activeIndex = navPaths.indexOf(location.pathname);
+    const container = navInnerRef.current;
+    const highlight = highlightRef.current;
+    const activeLink = linkRefs.current[activeIndex];
+
+    if (!container || !highlight) return;
+
+    if (activeIndex === -1 || !activeLink) {
+      highlight.style.opacity = "0";
+      return;
+    }
+
+    const containerRect = container.getBoundingClientRect();
+    const linkRect = activeLink.getBoundingClientRect();
+
+    highlight.style.opacity = "1";
+    highlight.style.left = `${linkRect.left - containerRect.left}px`;
+    highlight.style.width = `${linkRect.width}px`;
+  }, [location.pathname]);
+
+  useEffect(() => {
+    updateHighlight();
+  }, [updateHighlight]);
+
+  useEffect(() => {
+    window.addEventListener("resize", updateHighlight);
+    return () => window.removeEventListener("resize", updateHighlight);
+  }, [updateHighlight]);
+
   const handleLogout = () => {
     localStorage.removeItem("token");
     localStorage.removeItem("user");
@@ -45,21 +80,25 @@ const Navbar = ({ user, setUser, darkMode, setDarkMode }) => {
 
       {/* Desktop Navigation */}
       <div className="nav-links">
-        <div className="nav-links-inner">
+        <div className="nav-links-inner" ref={navInnerRef}>
+          <div className="nav-highlight" ref={highlightRef}></div>
           <Link
             to="/search"
+            ref={(el) => (linkRefs.current[0] = el)}
             className={location.pathname === "/search" ? "active" : ""}
           >
             <FaSearch /> <span>{t("initialPage.buyLands")}</span>
           </Link>
           <Link
             to="/add-listing"
+            ref={(el) => (linkRefs.current[1] = el)}
             className={location.pathname === "/add-listing" ? "active" : ""}
           >
             <FaPlusCircle /> <span>{t("initialPage.sellLands")}</span>
           </Link>
           <Link
             to="/mylistings"
+            ref={(el) => (linkRefs.current[2] = el)}
             className={location.pathname === "/mylistings" ? "active" : ""}
           >
             <FaThLarge /> <span>{t("navbar.myListings")}</span>

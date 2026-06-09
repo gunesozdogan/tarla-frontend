@@ -137,12 +137,12 @@ const ListingSearch = (callback, deps) => {
                   {field.location}
                 </p>
                 <p>
-                  📏 <strong>{t("listingSearch.size")}</strong> {field.size}{" "}
-                  acres
+                  📏 <strong>{t("listingSearch.size")}</strong>{" "}
+                  {field.size != null ? `${Math.round(Number(field.size)).toLocaleString()} m²` : "-"}
                 </p>
                 <p>
-                  💵 <strong>{t("listingSearch.price")}</strong> $
-                  {field.price.toLocaleString()}
+                  💵 <strong>{t("listingSearch.price")}</strong>{" "}
+                  {field.price != null ? `${Number(field.price).toLocaleString("tr-TR")} ₺` : "-"}
                 </p>
                 <button
                   className="view-details-btn1"
@@ -184,10 +184,10 @@ const ListingSearch = (callback, deps) => {
                       <br />
                       📍 {t("listingSearch.location")} {field.location}
                       <br />
-                      📏 {t("listingSearch.size")} {field.size} acres
+                      📏 {t("listingSearch.size")} {field.size != null ? `${Math.round(Number(field.size)).toLocaleString()} m²` : "-"}
                       <br />
-                      💵 {t("listingSearch.price")} $
-                      {field.price.toLocaleString()}
+                      💵 {t("listingSearch.price")}{" "}
+                      {field.price != null ? `${Number(field.price).toLocaleString("tr-TR")} ₺` : "-"}
                       <br />
                       <button
                         className="popup-details-btn"

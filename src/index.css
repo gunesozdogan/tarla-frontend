@@ -1,3 +1,6 @@
+/* Import Global CSS Variables */
+@import url("./variables.css");
+
 body {
   margin: 0;
   font-family:

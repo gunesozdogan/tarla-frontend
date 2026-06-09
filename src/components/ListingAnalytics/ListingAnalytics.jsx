@@ -4,6 +4,27 @@ import { useParams } from "react-router-dom";
 import { useTranslation } from "react-i18next"; // Import useTranslation hook
 import "./ListingAnalytics.css";
 import { Pie, Doughnut, Bar } from "react-chartjs-2";
+import {
+  Chart as ChartJS,
+  CategoryScale,
+  LinearScale,
+  BarElement,
+  ArcElement,
+  Title,
+  Tooltip,
+  Legend,
+} from "chart.js";
+
+// Register Chart.js components
+ChartJS.register(
+  CategoryScale,
+  LinearScale,
+  BarElement,
+  ArcElement,
+  Title,
+  Tooltip,
+  Legend
+);
 
 const ListingAnalytics = () => {
   const { fieldId } = useParams();
