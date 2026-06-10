@@ -5,13 +5,14 @@ import { useTranslation } from "react-i18next";
 import "./ViewDetailsPage.css";
 import heartEmpty from "../../assets/heart-empty.png";
 import heartFilled from "../../assets/heart-filled.png";
+import markerIcon from "../../assets/marker-icon.png";
 import { MapContainer, TileLayer, Polygon, Popup } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import L from "leaflet";
 
 const BACKEND_URL = "http://localhost:4000";
 new L.Icon({
-  iconUrl: require("../../assets/marker-icon.png"),
+  iconUrl: markerIcon,
   iconSize: [30, 45],
   iconAnchor: [15, 45],
 });

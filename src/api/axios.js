@@ -1,12 +1,8 @@
 import axios from 'axios';
 
 const getBaseURL = () => {
-  if (process.env.REACT_APP_API_BASE_URL && process.env.NODE_ENV === 'production') {
-    return process.env.REACT_APP_API_BASE_URL;
-  }
-
-  if (process.env.REACT_APP_API_BASE_URL && process.env.NODE_ENV === 'development') {
-    return process.env.REACT_APP_API_BASE_URL;
+  if (import.meta.env.REACT_APP_API_BASE_URL) {
+    return import.meta.env.REACT_APP_API_BASE_URL;
   }
 
   return '';
