@@ -35,17 +35,6 @@ export const Footer = () => {
             <Link>Privacy</Link>
           </p>
         </div>
-        <div className="social-links">
-          <a href="#" aria-label="Instagram">
-            <SocialIcon>📷</SocialIcon>
-          </a>
-          <a href="#" aria-label="Twitter">
-            <SocialIcon>🐦</SocialIcon>
-          </a>
-          <a href="#" aria-label="LinkedIn">
-            <SocialIcon>💼</SocialIcon>
-          </a>
-        </div>
       </div>
     </div>
   );
