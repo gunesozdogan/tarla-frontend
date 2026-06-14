@@ -10,8 +10,6 @@ import { MapContainer, TileLayer, Polygon, Popup } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import L from "leaflet";
 
-// Empty in all environments: image paths like `/uploads/x.jpg` are served
-// same-origin and proxied to the backend (Vite dev proxy locally, vercel.json in prod).
 const BACKEND_URL = "";
 new L.Icon({
   iconUrl: markerIcon,
