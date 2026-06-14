@@ -82,7 +82,7 @@ const LoginPage = ({ setUser }) => {
           <div className="social-login">
             <a
               className="google-btn"
-              href="http://localhost:4000/api/users/auth/google"
+              href="/api/users/auth/google"
             >
               <img src={googleLogo} alt="Google" />
               <span>{t("loginPage.loginWithGoogle")}</span>
@@ -90,7 +90,7 @@ const LoginPage = ({ setUser }) => {
 
             <a
               className="facebook-btn"
-              href="http://localhost:4000/api/users/auth/facebook"
+              href="/api/users/auth/facebook"
             >
               <img src={facebookLogo} alt="Facebook" />
               <span>{t("loginPage.loginWithFacebook")}</span>
