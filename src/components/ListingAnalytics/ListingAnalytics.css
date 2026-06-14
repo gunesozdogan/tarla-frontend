@@ -5,12 +5,12 @@
   border-radius: 12px;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
   text-align: center;
-  background: #eef6ee;
+  background: #f4f6f0;
 }
 
 .analytics-container h1 {
   font-size: 26px;
-  color: #2e6b2d;
+  color: #0f4c2d;
   margin-bottom: 20px;
 }
 
@@ -23,7 +23,7 @@
 
 .summary-card {
   flex: 1;
-  background: #eef6ee;
+  background: #f4f6f0;
   padding: 10px;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -40,7 +40,7 @@
 
 .summary-card h3 {
   font-size: var(--fs-body);
-  color: #2e6b2d;
+  color: #0f4c2d;
   margin-bottom: 5px;
 }
 
@@ -58,7 +58,7 @@
 }
 
 .chart-card {
-  background: #eef6ee;
+  background: #f4f6f0;
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -79,7 +79,7 @@
 
 .chart-card h2 {
   font-size: var(--fs-body);
-  color: #2e6b2d;
+  color: #0f4c2d;
   margin-bottom: 10px;
 }
 

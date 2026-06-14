@@ -1,7 +1,7 @@
 .edit-listing-container {
   max-width: 600px;
   margin: 50px auto;
-  background: #eef6ee;
+  background: #f4f6f0;
   padding: 30px;
   border-radius: 12px;
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
@@ -9,7 +9,7 @@
 }
 
 .edit-listing-container h1 {
-  color: #2e6b2d;
+  color: #0f4c2d;
   font-size: 26px;
   margin-bottom: 20px;
 }
@@ -63,7 +63,7 @@
 
 .input-group input:focus,
 .input-group textarea:focus {
-  border-color: #2e6b2d;
+  border-color: #0f4c2d;
   outline: none;
   box-shadow: 0 0 5px rgba(46, 107, 45, 0.2);
 }
@@ -74,7 +74,7 @@
 }
 
 .save-btn {
-  background-color: #2e6b2d;
+  background-color: #0f4c2d;
   color: white;
   border: none;
   padding: 12px 15px;
@@ -88,7 +88,7 @@
 }
 
 .save-btn:hover {
-  background-color: #244c22;
+  background-color: #0f4c2d;
   transform: scale(1.02);
 }
 
@@ -105,7 +105,7 @@ body.dark-mode .input-group textarea {
 }
 
 body.dark-mode .save-btn {
-  background-color: #397a39;
+  background-color: #15683e;
 }
 
 body.dark-mode .save-btn:hover {

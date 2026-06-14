@@ -1,22 +1,7 @@
-body {
-  margin: 0;
-  background: linear-gradient(135deg, #f8fbf9 0%, #f0f8f4 50%, #e8f5f0 100%);
-  transition: background 0.3s ease;
-}
-
-body.dark-mode {
-  background: linear-gradient(135deg, #0a3d0a 0%, #051d05 100%);
-}
-
-body.dark-mode .listing-search-page {
-  background-color: var(--color-dark-bg);
-  color: var(--color-gray-100);
-}
-
 .listing-search-page {
   display: flex;
   flex-direction: column;
-  background: linear-gradient(180deg, #ffffff 0%, #f8fbf9 100%);
+  background: var(--color-bg-main);
   min-height: 100vh;
   transition: all 0.3s ease;
 }

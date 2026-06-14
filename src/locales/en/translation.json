@@ -84,6 +84,20 @@
     "mainHeading": "Buy, Sell & Verify \n            Agricultural Lands Easily",
     "secondaryHeading": "A trusted platform connecting land owners and buyers across Türkiye."
   },
+  "home": {
+    "badge": "Türkiye's farmland marketplace",
+    "stat1": "10K+",
+    "stat1Label": "Listed farmlands",
+    "stat2": "81",
+    "stat2Label": "Provinces covered",
+    "stat3": "100%",
+    "stat3Label": "Verified parcels",
+    "featuresTitle": "Everything you need to buy and sell land",
+    "featuresSubtitle": "From discovery to deal — verified parcel data at every step.",
+    "ctaTitle": "Have land to sell?",
+    "ctaText": "List your parcel in minutes and reach verified buyers across Türkiye.",
+    "ctaButton": "List your land"
+  },
   "initialPage": {
     "fieldsInView": "Fields in View",
     "error": "Failed to fetch fields.",
@@ -177,6 +191,7 @@
   },
   "myListings": {
     "title": "My Listings",
+    "sessionExpired": "Your session has expired. Please log in again.",
     "noItems": "You have no active listings.",
     "locationLabel": "📍 Location:",
     "sizeLabel": "📏 Size:",

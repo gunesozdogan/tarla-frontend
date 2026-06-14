@@ -241,25 +241,25 @@
 body.dark-mode .how-it-works-card {
   background: linear-gradient(
     135deg,
-    rgba(91, 168, 119, 0.08) 0%,
-    rgba(91, 168, 119, 0.05) 100%
+    rgba(21, 104, 62, 0.08) 0%,
+    rgba(21, 104, 62, 0.05) 100%
   );
-  border-color: rgba(91, 168, 119, 0.15);
+  border-color: rgba(21, 104, 62, 0.15);
 }
 
 body.dark-mode .how-it-works-card:hover {
   background: linear-gradient(
     135deg,
-    rgba(91, 168, 119, 0.15) 0%,
-    rgba(91, 168, 119, 0.08) 100%
+    rgba(21, 104, 62, 0.15) 0%,
+    rgba(21, 104, 62, 0.08) 100%
   );
-  border-color: rgba(91, 168, 119, 0.25);
+  border-color: rgba(21, 104, 62, 0.25);
 }
 
 body.dark-mode .how-it-works-card-number {
-  box-shadow: 0 8px 20px rgba(91, 168, 119, 0.4);
+  box-shadow: 0 8px 20px rgba(21, 104, 62, 0.4);
 }
 
 body.dark-mode .how-it-works-card:hover .how-it-works-card-number {
-  box-shadow: 0 12px 28px rgba(91, 168, 119, 0.5);
+  box-shadow: 0 12px 28px rgba(21, 104, 62, 0.5);
 }

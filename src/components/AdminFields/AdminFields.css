@@ -1,7 +1,7 @@
 .admin-fields-page {
   max-width: 1400px;
   margin: 40px auto;
-  background: #eef6ee;
+  background: #f4f6f0;
   padding: 30px;
   border-radius: 12px;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
@@ -9,7 +9,7 @@
 
 .admin-fields-title {
   text-align: center;
-  color: #2e6b2d;
+  color: #0f4c2d;
   font-size: 28px;
   font-weight: bold;
   margin-bottom: 30px;
@@ -44,7 +44,7 @@
 
 .admin-field-title {
   font-size: 20px;
-  color: #2e6b2d;
+  color: #0f4c2d;
   font-weight: bold;
   text-align: center;
   margin-bottom: 15px;

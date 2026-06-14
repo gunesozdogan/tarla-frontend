@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useTranslation } from "react-i18next";
 import "./ProfilePage.css";
-import editIcon from "../../assets/edit-icon.png";
+import { FaPen } from "react-icons/fa";
 
 const ProfilePage = () => {
   const { t } = useTranslation();
@@ -92,7 +92,18 @@ const ProfilePage = () => {
       {error && <p className="error-message">{error}</p>}
       {success && <p className="success-message">{success}</p>}
 
-      {["username", "email", "phoneNumber"].map((field) => (
+      <div className="profile-header">
+        <div className="profile-avatar">
+          {(user.username || "?").charAt(0).toUpperCase()}
+        </div>
+        <div className="profile-header-info">
+          <span className="profile-header-name">{user.username}</span>
+          <span className="profile-header-email">{user.email}</span>
+        </div>
+      </div>
+
+      <div className="profile-card">
+        {["username", "email", "phoneNumber"].map((field) => (
         <div key={field} className="profile-field">
           <label>{t(`profilePage.${field}`)}:</label>
           {editField === field ? (
@@ -108,12 +119,12 @@ const ProfilePage = () => {
               {user[field] || t("profilePage.notSet")}
             </p>
           )}
-          <button className="edit-btn" onClick={() => handleEditClick(field)}>
-            <img
-              src={editIcon}
-              alt={t("profilePage.edit")}
-              className="edit-icon"
-            />
+          <button
+            className="edit-btn"
+            onClick={() => handleEditClick(field)}
+            aria-label={t("profilePage.edit")}
+          >
+            <FaPen />
           </button>
           {editField === field && (
             <button className="save-btn" onClick={() => handleSave(field)}>
@@ -122,6 +133,7 @@ const ProfilePage = () => {
           )}
         </div>
       ))}
+      </div>
 
       <div className="password-change">
         <h2>{t("profilePage.changePassword")}</h2>

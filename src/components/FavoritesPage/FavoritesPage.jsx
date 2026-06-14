@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import { FaMapMarkerAlt, FaRulerCombined, FaLiraSign } from "react-icons/fa";
 import "./FavoritesPage.css";
 
 const FavoritesPage = () => {
@@ -37,13 +38,16 @@ const FavoritesPage = () => {
             <div key={field.id} className="favorite-card">
               <h3>{field.name}</h3>
               <p>
-                📍 {t("favoritesPage.location")}: {field.location}
+                <FaMapMarkerAlt /> <strong>{t("favoritesPage.location")}:</strong>{" "}
+                {field.location}
               </p>
               <p>
-                📏 {t("favoritesPage.size")}: {field.size != null ? `${Math.round(Number(field.size)).toLocaleString()} m²` : "-"}
+                <FaRulerCombined /> <strong>{t("favoritesPage.size")}:</strong>{" "}
+                {field.size != null ? `${Math.round(Number(field.size)).toLocaleString()} m²` : "-"}
               </p>
               <p>
-                💵 {t("favoritesPage.price")}: {field.price != null ? `${Number(field.price).toLocaleString("tr-TR")} ₺` : "-"}
+                <FaLiraSign /> <strong>{t("favoritesPage.price")}:</strong>{" "}
+                {field.price != null ? `${Number(field.price).toLocaleString("tr-TR")} ₺` : "-"}
               </p>
               <button
                 className="view-details-btn"

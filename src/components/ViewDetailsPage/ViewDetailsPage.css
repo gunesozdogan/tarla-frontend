@@ -42,13 +42,13 @@
   justify-content: space-between;
   align-items: center;
   margin-bottom: 10px;
-  border-bottom: 2px solid #397a39;
+  border-bottom: 2px solid #15683e;
   padding-bottom: 6px;
 }
 
 .details-header h1 {
   font-size: 26px;
-  color: #2e6b2d;
+  color: #0f4c2d;
   font-weight: bold;
   margin: 0;
 }
@@ -56,7 +56,7 @@
 .details-price {
   font-size: 24px;
   font-weight: bold;
-  color: #397a39;
+  color: #15683e;
   margin: 0;
 }
 
@@ -68,7 +68,7 @@
 }
 
 .details-info strong {
-  color: #2e6b2d;
+  color: #0f4c2d;
 }
 
 .details-photos-section {
@@ -78,7 +78,7 @@
 
 .details-photos-section h2 {
   font-size: 20px;
-  color: #2e6b2d;
+  color: #0f4c2d;
 }
 
 .details-photos-grid {
@@ -150,7 +150,7 @@
 }
 
 .photo-modal h2 {
-  color: #2e6b2d;
+  color: #0f4c2d;
   margin-bottom: 15px;
 }
 
@@ -207,7 +207,7 @@
 .photo-count {
   font-size: 20px;
   font-weight: bold;
-  color: #2e6b2d;
+  color: #0f4c2d;
   margin-top: 20px;
   display: flex;
   align-items: center;
@@ -276,7 +276,7 @@ body.dark-mode .view-details-page {
 }
 
 .details-loading-message {
-  color: #397a39;
+  color: #15683e;
   text-align: center;
   font-size: var(--fs-body);
 }

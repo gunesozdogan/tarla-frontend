@@ -18,7 +18,7 @@
 
 .login-warning-box h2 {
   font-size: 22px;
-  color: #2e6b2d;
+  color: #0f4c2d;
   margin-bottom: 10px;
 }
 
@@ -29,7 +29,7 @@
 }
 
 .login-btn {
-  background: #2e6b2d;
+  background: #0f4c2d;
   color: white;
   padding: 10px 15px;
   border: none;
@@ -40,5 +40,5 @@
 }
 
 .login-btn:hover {
-  background: #244c22;
+  background: #0f4c2d;
 }

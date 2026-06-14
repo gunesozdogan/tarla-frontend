@@ -84,6 +84,20 @@
     "mainHeading": "Tarlalarını \nKolayca Alın, Satın veya Doğrulayın",
     "secondaryHeading": "Türkiye genelinde tarla sahipleri ile alıcıları buluşturan güvenilir bir platform."
   },
+  "home": {
+    "badge": "Türkiye'nin tarla pazarı",
+    "stat1": "10B+",
+    "stat1Label": "Listelenen tarla",
+    "stat2": "81",
+    "stat2Label": "İl genelinde",
+    "stat3": "%100",
+    "stat3Label": "Doğrulanmış parsel",
+    "featuresTitle": "Tarla alıp satmak için ihtiyacın olan her şey",
+    "featuresSubtitle": "Keşiften anlaşmaya — her adımda doğrulanmış parsel verisi.",
+    "ctaTitle": "Satılık tarlan mı var?",
+    "ctaText": "Tarlanı dakikalar içinde listele, Türkiye genelinde doğrulanmış alıcılara ulaş.",
+    "ctaButton": "Tarlanı listele"
+  },
   "initialPage": {
     "fieldsInView": "Yakınınızdaki Tarlalar",
     "error": "Tarlalar yüklenirken bir hata oluştu.",
@@ -176,6 +190,7 @@
   },
   "myListings": {
     "title": "İlanlarım",
+    "sessionExpired": "Oturum süreniz doldu. Lütfen tekrar giriş yapın.",
     "noItems": "Aktif ilanınız yok.",
     "locationLabel": "📍 Konum:",
     "sizeLabel": "📏 Boyut:",

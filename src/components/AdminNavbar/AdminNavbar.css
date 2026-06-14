@@ -2,7 +2,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #2e6b2d;
+  background-color: #0f4c2d;
   padding: 10px 20px;
   color: white;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -30,7 +30,7 @@
 
 .admin-navbar-links li a.active-link,
 .admin-navbar-links li a:hover {
-  background-color: #244c22;
+  background-color: #0f4c2d;
 }
 
 .logout-btn {

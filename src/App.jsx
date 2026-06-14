@@ -126,14 +126,7 @@ function App() {
               </ProtectedRoute>
             }
           />
-          <Route
-            path="/viewdetails/:id"
-            element={
-              <ProtectedRoute user={user}>
-                <ViewDetailsPage />
-              </ProtectedRoute>
-            }
-          />
+          <Route path="/viewdetails/:id" element={<ViewDetailsPage />} />
           <Route
             path="/profile"
             element={
@@ -174,14 +167,7 @@ function App() {
               </ProtectedRoute>
             }
           />
-          <Route
-            path="/search"
-            element={
-              <ProtectedRoute user={user}>
-                <ListingSearch />
-              </ProtectedRoute>
-            }
-          />
+          <Route path="/search" element={<ListingSearch />} />
           <Route
             path="/fieldsView"
             element={

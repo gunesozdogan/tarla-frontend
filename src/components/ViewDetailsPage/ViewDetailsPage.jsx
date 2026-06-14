@@ -25,6 +25,7 @@ const ViewDetailsPage = () => {
   const [isFavorite, setIsFavorite] = useState(false);
   const [showModal, setShowModal] = useState(false);
   const [currentPhotoIndex, setCurrentPhotoIndex] = useState(0);
+  const isLoggedIn = Boolean(localStorage.getItem("token"));
 
   useEffect(() => {
     const fetchFieldDetails = async () => {
@@ -34,10 +35,14 @@ const ViewDetailsPage = () => {
         });
         setField(response.data);
 
-        const favResponse = await axios.get(`/api/users/favorites/${id}`, {
-          headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
-        });
-        setIsFavorite(favResponse.data.isFavorite);
+        if (isLoggedIn) {
+          const favResponse = await axios.get(`/api/users/favorites/${id}`, {
+            headers: {
+              Authorization: `Bearer ${localStorage.getItem("token")}`,
+            },
+          });
+          setIsFavorite(favResponse.data.isFavorite);
+        }
       } catch (err) {
         console.error("Error fetching field details:", err);
         setError(t("viewDetailsPage.fieldDetailsError"));
@@ -113,12 +118,14 @@ const ViewDetailsPage = () => {
         <div className="details-header">
           <h1>{field.name}</h1>
           <p className="details-price">{field.price != null ? `${Number(field.price).toLocaleString("tr-TR")} ₺` : "-"}</p>
-          <button className="favorite-btn" onClick={toggleFavorite}>
-            <img
-              src={isFavorite ? heartFilled : heartEmpty}
-              alt="Favorite Icon"
-            />
-          </button>
+          {isLoggedIn && (
+            <button className="favorite-btn" onClick={toggleFavorite}>
+              <img
+                src={isFavorite ? heartFilled : heartEmpty}
+                alt="Favorite Icon"
+              />
+            </button>
+          )}
         </div>
 
         <div className="details-info">

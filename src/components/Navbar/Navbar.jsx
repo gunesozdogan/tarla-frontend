@@ -2,9 +2,9 @@ import React, { useState, useRef, useEffect, useCallback } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import {
   FaStar,
-  FaSearch,
-  FaThLarge,
-  FaPlusCircle,
+  FaMapMarkedAlt,
+  FaLayerGroup,
+  FaHandHoldingUsd,
   FaBell,
   FaUser,
   FaGlobe,
@@ -86,21 +86,21 @@ const Navbar = ({ user, setUser, darkMode, setDarkMode }) => {
             ref={(el) => (linkRefs.current[0] = el)}
             className={location.pathname === "/search" ? "active" : ""}
           >
-            <FaSearch /> <span>{t("initialPage.buyLands")}</span>
+            <FaMapMarkedAlt /> <span>{t("initialPage.buyLands")}</span>
           </Link>
           <Link
             to="/add-listing"
             ref={(el) => (linkRefs.current[1] = el)}
             className={location.pathname === "/add-listing" ? "active" : ""}
           >
-            <FaPlusCircle /> <span>{t("initialPage.sellLands")}</span>
+            <FaHandHoldingUsd /> <span>{t("initialPage.sellLands")}</span>
           </Link>
           <Link
             to="/mylistings"
             ref={(el) => (linkRefs.current[2] = el)}
             className={location.pathname === "/mylistings" ? "active" : ""}
           >
-            <FaThLarge /> <span>{t("navbar.myListings")}</span>
+            <FaLayerGroup /> <span>{t("navbar.myListings")}</span>
           </Link>
         </div>
 
@@ -124,6 +124,14 @@ const Navbar = ({ user, setUser, darkMode, setDarkMode }) => {
             <div className="profile-dropdown">
               {user ? (
                 <>
+                  <div className="profile-info">
+                    <span className="profile-info-name">
+                      {user.username || user.name || user.email || t("navbar.viewProfile")}
+                    </span>
+                    <span className="profile-info-sub">
+                      {user.email || (user.id ? `ID: ${user.id}` : "")}
+                    </span>
+                  </div>
                   <Link to="/profile">{t("navbar.viewProfile")}</Link>
                   <div className="logout-btn" onClick={handleLogout}>
                     {t("navbar.logout")}
@@ -185,21 +193,21 @@ const Navbar = ({ user, setUser, darkMode, setDarkMode }) => {
             className={location.pathname === "/search" ? "active" : ""}
             onClick={() => setMobileMenuOpen(false)}
           >
-            <FaSearch /> {t("initialPage.buyLands")}
+            <FaMapMarkedAlt /> {t("initialPage.buyLands")}
           </Link>
           <Link
             to="/add-listing"
             className={location.pathname === "/add-listing" ? "active" : ""}
             onClick={() => setMobileMenuOpen(false)}
           >
-            <FaPlusCircle /> {t("initialPage.sellLands")}
+            <FaHandHoldingUsd /> {t("initialPage.sellLands")}
           </Link>
           <Link
             to="/mylistings"
             className={location.pathname === "/mylistings" ? "active" : ""}
             onClick={() => setMobileMenuOpen(false)}
           >
-            <FaThLarge /> {t("navbar.myListings")}
+            <FaLayerGroup /> {t("navbar.myListings")}
           </Link>
           <div className="mobile-menu-divider" />
           <Link

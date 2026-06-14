@@ -136,7 +136,7 @@ body.dark-mode {
 }
 
 .toggle-label input:checked + .toggle-slider {
-  background-color: #2e6b2d;
+  background-color: #0f4c2d;
 }
 
 .toggle-slider::before {

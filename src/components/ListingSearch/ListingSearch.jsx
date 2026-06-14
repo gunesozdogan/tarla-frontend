@@ -8,6 +8,16 @@ import "leaflet.markercluster/dist/MarkerCluster.css";
 import "leaflet.markercluster/dist/MarkerCluster.Default.css";
 import L from "leaflet";
 import MarkerClusterGroup from "@changey/react-leaflet-markercluster";
+import {
+  FaMapMarkedAlt,
+  FaThLarge,
+  FaMapMarkerAlt,
+  FaRulerCombined,
+  FaLiraSign,
+  FaSearch,
+  FaChevronLeft,
+  FaChevronRight,
+} from "react-icons/fa";
 import "./ListingSearch.css";
 
 const customMarker = L.icon({
@@ -29,6 +39,8 @@ const ListingSearch = (callback, deps) => {
   const [minSize, setMinSize] = useState("");
   const [maxSize, setMaxSize] = useState("");
   const [error, setError] = useState("");
+  const [currentPage, setCurrentPage] = useState(1);
+  const PAGE_SIZE = 16;
 
   const fetchFields = useCallback(async () => {
     try {
@@ -40,6 +52,7 @@ const ListingSearch = (callback, deps) => {
 
       const response = await axios.get("/api/fields/filter", { params });
       setFields(response.data);
+      setCurrentPage(1);
       setError("");
     } catch (err) {
       console.error("Error fetching fields:", err);
@@ -59,6 +72,27 @@ const ListingSearch = (callback, deps) => {
     fetchFields();
   };
 
+  const totalPages = Math.ceil(fields.length / PAGE_SIZE);
+  const paginatedFields = fields.slice(
+    (currentPage - 1) * PAGE_SIZE,
+    currentPage * PAGE_SIZE,
+  );
+
+  const goToPage = (page) => {
+    setCurrentPage(page);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  const MAX_VISIBLE_PAGES = 10;
+  let startPage = Math.max(
+    1,
+    currentPage - Math.floor(MAX_VISIBLE_PAGES / 2),
+  );
+  const endPage = Math.min(totalPages, startPage + MAX_VISIBLE_PAGES - 1);
+  startPage = Math.max(1, endPage - MAX_VISIBLE_PAGES + 1);
+  const pageNumbers = [];
+  for (let p = startPage; p <= endPage; p++) pageNumbers.push(p);
+
   return (
     <div className="listing-search-page1">
       <div className="filters-container">
@@ -67,13 +101,13 @@ const ListingSearch = (callback, deps) => {
             className={view === "map" ? "active" : ""}
             onClick={() => setView("map")}
           >
-            🗺️ {t("listingSearch.mapView")}
+            <FaMapMarkedAlt /> {t("listingSearch.mapView")}
           </button>
           <button
             className={view === "list" ? "active" : ""}
             onClick={() => setView("list")}
           >
-            📜 {t("listingSearch.listView")}
+            <FaThLarge /> {t("listingSearch.listView")}
           </button>
         </div>
 
@@ -106,13 +140,9 @@ const ListingSearch = (callback, deps) => {
 
         <div className="filter-buttons">
           <button className="apply-filters-btn" onClick={fetchFields}>
-            {t("listingSearch.applyFilters")}
+            <FaSearch /> {t("listingSearch.applyFilters")}
           </button>
-          <button
-            className="apply-filters-btn"
-            style={{ backgroundColor: "#d9534f" }}
-            onClick={clearFilters}
-          >
+          <button className="clear-filters-btn" onClick={clearFilters}>
             {t("listingSearch.clearFilters")}
           </button>
         </div>
@@ -123,19 +153,19 @@ const ListingSearch = (callback, deps) => {
       {view === "list" && (
         <div className="fields-grid1">
           {fields.length > 0 ? (
-            fields.map((field) => (
+            paginatedFields.map((field) => (
               <div key={field.id} className="field-card1">
                 <h3>{field.name}</h3>
                 <p>
-                  📍 <strong>{t("listingSearch.location")}</strong>{" "}
+                  <FaMapMarkerAlt /> <strong>{t("listingSearch.location")}</strong>{" "}
                   {field.location}
                 </p>
                 <p>
-                  📏 <strong>{t("listingSearch.size")}</strong>{" "}
+                  <FaRulerCombined /> <strong>{t("listingSearch.size")}</strong>{" "}
                   {field.size != null ? `${Math.round(Number(field.size)).toLocaleString()} m²` : "-"}
                 </p>
                 <p>
-                  💵 <strong>{t("listingSearch.price")}</strong>{" "}
+                  <FaLiraSign /> <strong>{t("listingSearch.price")}</strong>{" "}
                   {field.price != null ? `${Number(field.price).toLocaleString("tr-TR")} ₺` : "-"}
                 </p>
                 <button
@@ -149,6 +179,36 @@ const ListingSearch = (callback, deps) => {
           ) : (
             <p className="no-fields1">{t("listingSearch.noFieldsAvailable")}</p>
           )}
+        </div>
+      )}
+
+      {view === "list" && totalPages > 1 && (
+        <div className="pagination">
+          <button
+            className="pagination-btn"
+            onClick={() => goToPage(Math.max(1, currentPage - 1))}
+            disabled={currentPage === 1}
+            aria-label="Previous page"
+          >
+            <FaChevronLeft />
+          </button>
+          {pageNumbers.map((page) => (
+            <button
+              key={page}
+              className={`pagination-btn ${page === currentPage ? "active" : ""}`}
+              onClick={() => goToPage(page)}
+            >
+              {page}
+            </button>
+          ))}
+          <button
+            className="pagination-btn"
+            onClick={() => goToPage(Math.min(totalPages, currentPage + 1))}
+            disabled={currentPage === totalPages}
+            aria-label="Next page"
+          >
+            <FaChevronRight />
+          </button>
         </div>
       )}
 
@@ -175,11 +235,11 @@ const ListingSearch = (callback, deps) => {
                     <div className="popup-content">
                       <strong>{field.name}</strong>
                       <br />
-                      📍 {t("listingSearch.location")} {field.location}
+                      <FaMapMarkerAlt /> {t("listingSearch.location")} {field.location}
                       <br />
-                      📏 {t("listingSearch.size")} {field.size != null ? `${Math.round(Number(field.size)).toLocaleString()} m²` : "-"}
+                      <FaRulerCombined /> {t("listingSearch.size")} {field.size != null ? `${Math.round(Number(field.size)).toLocaleString()} m²` : "-"}
                       <br />
-                      💵 {t("listingSearch.price")}{" "}
+                      <FaLiraSign /> {t("listingSearch.price")}{" "}
                       {field.price != null ? `${Number(field.price).toLocaleString("tr-TR")} ₺` : "-"}
                       <br />
                       <button
