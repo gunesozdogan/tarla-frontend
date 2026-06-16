@@ -1,5 +1,9 @@
 # Tarla — Frontend
 
+![Tarla](./readme.png)
+
+> This repository is the **frontend** part of the project. The backend lives in a separate repository: [tarla-backend-node](https://github.com/gunesozdogan/tarla-backend-node).
+
 Web application for listing, discovering and managing farmlands (tarla) in Turkey. Users browse parcels on an interactive map, list their own land for sale, save favorites, view per‑listing analytics, and manage everything from a personalized dashboard. Parcel boundaries and cadastral data (ada/parsel) are sourced from Turkey's TKGM system on the backend.
 
 This repository contains the **React single‑page frontend**. It talks to a separate Node/Express + PostgreSQL backend (`tarla-backend-node`) over a REST API.
